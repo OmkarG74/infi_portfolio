@@ -1,0 +1,27 @@
+/* ==========================================================================
+   STITCH EXECUTIVE LIGHT — HOMEPAGE CSS
+   ========================================================================== */
+
+.hero-section {
+  background-color: var(--bg-surface);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  color: var(--primary-charcoal);
+  letter-spacing: -0.02em;
+}
+
+.stat-item {
+  background-color: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  transition: var(--transition-base);
+}
+
+.stat-item:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}

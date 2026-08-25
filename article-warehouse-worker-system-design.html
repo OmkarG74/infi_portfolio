@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>The Day a Warehouse Worker Changed Our Entire System Design — Yatin Sanjeev Kanekar</title>
+  <meta name="description" content="Case study and operational insights by Yatin Sanjeev Kanekar on system design, ERP workflows, and shop-floor user experience.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts — Stitch Executive Light Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#0c1014",
+            "executive-gold": "#B0925A",
+            "background": "#fcf8f8",
+            "border-hairline": "rgba(33, 37, 41, 0.1)",
+            "surface-low": "#f6f3f3"
+          },
+          "fontFamily": {
+            "label-caps": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display-lg": ["EB Garamond", "serif"],
+            "mono-technical": ["Geist", "monospace"],
+            "editorial-md": ["EB Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-executive-gold z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- Master Fixed Executive Header (Source of Truth) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-border-hairline shadow-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
+      
+      <!-- Brand Zone -->
+      <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0">
+        <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center space-x-4 xl:space-x-5 text-[11px] font-label-caps uppercase tracking-wider whitespace-nowrap">
+        <a href="index.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">About</a>
+        <a href="journey.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Journey</a>
+        <a href="leadership.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Leadership</a>
+        <a href="ventures.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Ventures</a>
+        <a href="products.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Products</a>
+        <a href="technology.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Technology</a>
+        <a href="insights.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Insights</a>
+        <a href="articles.html" class="text-executive-gold font-bold py-1 border-b-2 border-executive-gold">Articles</a>
+        <a href="speaking.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Speaking</a>
+        <a href="contact.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Far Right Action CTA & Mobile Toggle -->
+      <div class="flex items-center space-x-3 flex-shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex items-center py-2 px-4.5 bg-primary text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none whitespace-nowrap">
+          Partner With Me
+        </a>
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-border-hairline px-6 py-6 space-y-2.5 font-label-caps uppercase text-xs">
+      <a href="index.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Home</a>
+      <a href="about.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">About</a>
+      <a href="journey.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Journey</a>
+      <a href="leadership.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Leadership</a>
+      <a href="ventures.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Ventures</a>
+      <a href="products.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Products</a>
+      <a href="technology.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Technology</a>
+      <a href="insights.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Insights</a>
+      <a href="articles.html" class="block py-1.5 text-executive-gold font-bold">Articles</a>
+      <a href="speaking.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Speaking</a>
+      <a href="social-impact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Social Impact</a>
+      <a href="awards.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Credentials</a>
+      <a href="media-gallery.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Gallery</a>
+      <a href="contact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Contact</a>
+      <div class="pt-4 border-t border-border-hairline">
+        <a href="contact.html" class="block w-full py-3 bg-primary text-white text-center font-semibold rounded">Partner With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Article Hero -->
+  <header class="pt-16 pb-12 max-w-4xl mx-auto px-6 text-center">
+    <span class="font-mono-technical text-xs text-executive-gold uppercase tracking-widest block mb-3 font-semibold">SYSTEM DESIGN</span>
+    <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-primary mb-6 font-normal leading-tight">
+      The Day a Warehouse Worker Changed Our Entire System Design
+    </h1>
+    <p class="font-editorial-md text-lg sm:text-xl md:text-2xl text-gray-600 italic max-w-3xl mx-auto mb-6">
+      “Some of the most valuable lessons in technology don’t come from boardrooms. They come from the shop floor.”
+    </p>
+    <div class="flex items-center justify-center space-x-4 font-mono-technical text-xs text-gray-500 uppercase tracking-wider pt-4 border-t border-border-hairline max-w-md mx-auto">
+      <span>25 MARCH 2026</span>
+      <span>·</span>
+      <span>9 MIN READ</span>
+      <span>·</span>
+      <span>BY YATIN SANJEEV KANEKAR</span>
+    </div>
+  </header>
+
+  <!-- Article Hero Image Container -->
+  <div class="max-w-[1060px] mx-auto px-6 mb-16">
+    <div class="bg-white border border-border-hairline rounded-lg p-2 shadow-xs overflow-hidden">
+      <img src="https://yatinsanjeevkanekar.in/uploads/blogs/ae775efcd5930e51.jpg" alt="The Day a Warehouse Worker Changed Our Entire System Design" class="w-full h-80 sm:h-[480px] object-cover rounded">
+    </div>
+  </div>
+
+  <!-- Main Article Body -->
+  <main class="flex-grow max-w-[740px] mx-auto px-6 pb-20 text-gray-800 space-y-8 text-base sm:text-lg leading-relaxed">
+    
+    <p class="text-xl font-editorial-md italic text-gray-700">
+      In the early years of building software systems, I believed that clarity came from leadership conversations. Meet the CEO. Understand the vision. Translate it into technology. That seemed logical.
+    </p>
+    <p>
+      But over time, working across manufacturing units, trading businesses, and operational-heavy environments, I realized something far more important: The real truth of a business does not live in presentations. It lives in execution. And execution is owned not by executives — but by operators. Warehouse managers. Plant supervisors. Field teams. Sales coordinators.
+    </p>
+    <p>
+      The people who actually make the business run every single day. Some of the most valuable lessons we’ve learned at <strong>Infipre IT Services</strong> didn’t come from strategy meetings. They came from listening carefully to people who were never part of those meetings.
+    </p>
+
+    <!-- Section 1 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Day a Warehouse Operator Changed Our Approach</h2>
+      <p>We were working on a warehouse management system for a trading business.</p>
+      <p>The leadership had clear expectations:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Real-time inventory tracking</li>
+        <li>Barcode-based inward and outward movement</li>
+        <li>Automated stock reconciliation</li>
+        <li>Dashboard visibility</li>
+      </ul>
+      <p>Everything was aligned from a system design perspective. The workflows were structured. The modules were defined.</p>
+      <p>From a technical standpoint, it was a strong solution. Before finalizing the design, we decided to spend a day at the warehouse. Not in a conference room. On the actual floor. We observed how materials moved. How entries were made. How decisions were taken. At one point, we spoke to a warehouse operator responsible for dispatch.</p>
+      <p>We explained the barcode-based dispatch process. Scan item → validate → confirm → update stock. It was clean. Efficient. Technically correct.</p>
+      <p class="font-semibold text-primary">He listened patiently and then said something simple: “Sir, this will slow us down during peak hours.”</p>
+      <p>That one sentence changed the direction of the system.</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Ground Reality vs Designed Reality</h2>
+      <p>From a system perspective, barcode scanning ensures accuracy. From an operational perspective, the reality was different.</p>
+      <p>During peak dispatch hours:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Multiple trucks were loaded simultaneously</li>
+        <li>Workers moved quickly to meet timelines</li>
+        <li>Internet connectivity was inconsistent in certain areas</li>
+        <li>Time pressure was high</li>
+      </ul>
+      <p>Stopping to scan each item was not just inconvenient. It was impractical. If we had ignored this insight, the system would have been:</p>
+      <p class="font-semibold text-primary">✔ Technically sound &nbsp;&nbsp;&nbsp; ❌ Operationally rejected</p>
+      <p>Instead, we redesigned the workflow. We introduced:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Batch-level validation instead of item-level scanning in peak scenarios</li>
+        <li>Offline capture with later sync</li>
+        <li>Exception-based scanning for critical items</li>
+        <li>Flexible workflows depending on load volume</li>
+      </ul>
+      <p>The system became slightly more complex technically. But significantly more usable operationally. And that made all the difference.</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Hidden Gap in Most Software Projects</h2>
+      <p>Most digital systems are designed in meeting rooms. But they are used in environments that are far less controlled:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Noisy shop floors</li>
+        <li>Time-sensitive dispatch zones</li>
+        <li>Unpredictable field conditions</li>
+        <li>High-pressure operational settings</li>
+      </ul>
+      <p>When systems are designed without understanding this reality, a gap emerges. A gap between <strong>Designed workflow</strong> and <strong>Actual behavior</strong>.</p>
+      <p>This gap leads to:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Workarounds</li>
+        <li>Partial adoption</li>
+        <li>Data inconsistencies</li>
+        <li>Frustration among teams</li>
+      </ul>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        And eventually: “System is good, but practically it doesn’t work.”
+      </blockquote>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Another Lesson From a Plant Supervisor</h2>
+      <p>In a manufacturing setup, we were building a production tracking system. The objective was clear: Track every stage of production digitally.</p>
+      <p>The design included:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Step-by-step process updates</li>
+        <li>Real-time status tracking</li>
+        <li>Supervisor approvals at each stage</li>
+      </ul>
+      <p>It looked structured and efficient. During a plant visit, we discussed the workflow with a supervisor. He said something interesting:</p>
+      <p class="font-semibold text-primary">“If I have to update the system after every step, I will spend more time on the screen than on production.”</p>
+      <p>That insight revealed a critical flaw. The system assumed that <strong>data capture frequency equals control</strong>.</p>
+      <p>But in reality, excessive data entry reduces productivity. So we redesigned:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Critical checkpoints instead of every step</li>
+        <li>Automated status progression based on triggers</li>
+        <li>Minimal manual input</li>
+      </ul>
+      <p>The result? Better data accuracy. Higher adoption. Less resistance.</p>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Ground Reality Shapes Better Software</h2>
+      <p>These experiences reinforced a powerful belief:</p>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        The best systems are not designed from assumptions. They are shaped by observation.
+      </blockquote>
+      <p>Operators don’t speak in technical terms. They don’t talk about APIs or architectures.</p>
+      <p>But they understand:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Where delays happen</li>
+        <li>Where errors occur</li>
+        <li>What slows down work</li>
+        <li>What actually matters</li>
+      </ul>
+      <p>Their insights are practical, immediate, and often brutally honest. And that honesty is what makes systems better.</p>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Respecting Operational Knowledge</h2>
+      <p>One of the biggest mindset shifts for technology teams is this: Expertise does not always sit at the top.</p>
+      <p>In fact, in many cases:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Executives define direction</li>
+        <li>Managers define structure</li>
+        <li>Operators define reality</li>
+      </ul>
+      <p>Ignoring any one of these layers creates imbalance. Respecting operational knowledge means:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Listening without bias</li>
+        <li>Observing workflows without assumptions</li>
+        <li>Validating designs against real scenarios</li>
+        <li>Accepting that theory may not always work in practice</li>
+      </ul>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Emotional Side of Being Heard</h2>
+      <p>There is another dimension to this. When operators are involved in system design:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>They feel valued</li>
+        <li>They feel respected</li>
+        <li>They feel ownership</li>
+      </ul>
+      <p>And ownership drives adoption. When systems are imposed from the top, resistance is natural. But when systems are shaped with input from the ground, adoption becomes easier. Because people don’t feel like they are using someone else’s system. They feel like they are using <strong>their system</strong>.</p>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Infipre Learning</h2>
+      <p>Over time, one principle has become central to how we approach projects: <strong>The closer we get to the ground reality, the better the solution becomes.</strong> This is why we emphasize:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>On-site visits</li>
+        <li>Process observation</li>
+        <li>Operator-level discussions</li>
+        <li>Real-world scenario testing</li>
+      </ul>
+      <p>Not as a formality. But as a necessity. Because no amount of documentation can replace <strong>first-hand understanding</strong>.</p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">A Different Definition of Expertise</h2>
+      <p>We often associate expertise with experience, titles, and strategic thinking.</p>
+      <p>But there is another kind of expertise. The kind that comes from doing the same task every day. The kind that understands:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Where shortcuts happen</li>
+        <li>Where errors are tolerated</li>
+        <li>Where processes break under pressure</li>
+      </ul>
+      <p>This expertise may not always be articulated in formal language. But it is incredibly valuable.</p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="space-y-4 pt-4 border-t border-border-hairline">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Final Thought</h2>
+      <p>Technology can be designed in isolation. But it cannot succeed in isolation. The systems that truly work are not just technically strong. They are <strong>operationally aligned</strong>.</p>
+      <p>And that alignment comes from listening — not just to leadership, but to the people who live the process every day. Because sometimes, the most powerful insights don’t come from strategy decks. They come from a simple sentence on the shop floor:</p>
+      <p class="font-editorial-md text-xl text-primary italic pt-2">
+        “Sir, this won’t work here.”
+      </p>
+      <p>And if you listen carefully enough, that sentence might just save your entire project.</p>
+    </section>
+
+    <!-- Author & Secondary Navigation Block -->
+    <div class="pt-12 border-t border-border-hairline space-y-8">
+      
+      <div class="flex items-center justify-between">
+        <a href="articles.html" class="font-mono-technical text-xs text-gray-500 uppercase tracking-widest hover:text-executive-gold transition-colors text-decoration-none">
+          ← Back to Articles Archive
+        </a>
+      </div>
+
+      <!-- Author Card -->
+      <div class="bg-white border border-border-hairline rounded-lg p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xs">
+        <img src="assets/images/yatin-portrait.jpg" alt="Yatin Sanjeev Kanekar" class="w-20 h-20 rounded-full object-cover border border-border-hairline flex-shrink-0">
+        <div class="space-y-2 text-center sm:text-left">
+          <h3 class="font-display-lg text-2xl text-primary">Yatin Sanjeev Kanekar</h3>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-600 leading-relaxed max-w-xl">
+            Founder of Infipre IT Services, SaaS product architect, and mentor. Writing on software architecture, applied AI, and organizational scale.
+          </p>
+        </div>
+      </div>
+
+      <!-- Strategic Opportunity Callout CTA -->
+      <div class="bg-white border border-border-hairline rounded-lg p-8 text-center space-y-3">
+        <h3 class="font-display-lg text-2xl text-primary font-normal">Have a perspective or software challenge to discuss?</h3>
+        <p class="text-xs text-gray-600 max-w-md mx-auto">Let's connect on software design, executive advisory, or product partnerships.</p>
+        <a href="contact.html" class="inline-flex items-center py-2.5 px-6 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none">
+          Partner With Me →
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Master Premium Executive Footer -->
+  <footer class="bg-primary text-white py-14 px-6 border-t border-border-hairline">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Top Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        
+        <!-- Area 1: Brand & Identity -->
+        <div class="md:col-span-4 space-y-3">
+          <a href="index.html" class="inline-block mb-1">
+            <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-10 w-auto object-contain brightness-200">
+          </a>
+          <h2 class="font-display-lg text-2xl text-white font-normal leading-snug">Yatin Sanjeev Kanekar</h2>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Strategic technology leadership across custom software engineering, applied AI, enterprise platforms, and venture building.
+          </p>
+        </div>
+
+        <!-- Area 2: Multi-Column Navigation -->
+        <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono-technical">
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Explore</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey</a></li>
+              <li><a href="leadership.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Leadership</a></li>
+              <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Build</h3>
+            <ul class="space-y-2">
+              <li><a href="products.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products</a></li>
+              <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
+              <li><a href="articles.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles</a></li>
+              <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Connect</h3>
+            <ul class="space-y-2">
+              <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Credentials</a></li>
+              <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Area 3: Strategic CTA -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="font-display-lg text-lg text-white font-normal">Have a strategic opportunity in mind?</h3>
+          <p class="text-xs text-gray-400">Let's build what matters for the next decade of growth.</p>
+          <a href="contact.html" class="inline-flex items-center py-2.5 px-5 bg-executive-gold text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">
+            Partner With Me →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Area 4: Brand Statement & Copyright -->
+      <div class="pt-8 text-center space-y-4">
+        <p class="font-editorial-md text-sm sm:text-base italic text-gray-400 max-w-xl mx-auto">
+          “Clarity of purpose is the foundation of institutional longevity.”
+        </p>
+        <p class="font-mono-technical text-xs text-gray-500">
+          © 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Institutional Grade Security Enabled.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/mobile-nav.js"></script>
+  <script>
+    // Reading Progress Bar Handler
+    window.addEventListener('scroll', function() {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progress = document.getElementById('reading-progress');
+      if (progress) { progress.style.width = scrolled + '%'; }
+    });
+  </script>
+</body>
+</html>

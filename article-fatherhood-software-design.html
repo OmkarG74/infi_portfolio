@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Why Being a Father Changed the Way I Design Software — Yatin Sanjeev Kanekar</title>
+  <meta name="description" content="Personal reflections by Yatin Sanjeev Kanekar on user empathy, simplicity, and designing software that serves real human needs.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts — Stitch Executive Light Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#0c1014",
+            "executive-gold": "#B0925A",
+            "background": "#fcf8f8",
+            "border-hairline": "rgba(33, 37, 41, 0.1)",
+            "surface-low": "#f6f3f3"
+          },
+          "fontFamily": {
+            "label-caps": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display-lg": ["EB Garamond", "serif"],
+            "mono-technical": ["Geist", "monospace"],
+            "editorial-md": ["EB Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-executive-gold z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- Master Fixed Executive Header (Source of Truth) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-border-hairline shadow-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
+      
+      <!-- Brand Zone: ONLY YK Logo Asset -->
+      <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0">
+        <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center space-x-4 xl:space-x-5 text-[11px] font-label-caps uppercase tracking-wider whitespace-nowrap">
+        <a href="index.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">About</a>
+        <a href="journey.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Journey</a>
+        <a href="leadership.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Leadership</a>
+        <a href="ventures.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Ventures</a>
+        <a href="products.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Products</a>
+        <a href="technology.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Technology</a>
+        <a href="insights.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Insights</a>
+        <a href="articles.html" class="text-executive-gold font-bold py-1 border-b-2 border-executive-gold">Articles</a>
+        <a href="speaking.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Speaking</a>
+        <a href="contact.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Far Right Action CTA & Mobile Toggle -->
+      <div class="flex items-center space-x-3 flex-shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex items-center py-2 px-4.5 bg-primary text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none whitespace-nowrap">
+          Partner With Me
+        </a>
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-border-hairline px-6 py-6 space-y-2.5 font-label-caps uppercase text-xs">
+      <a href="index.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Home</a>
+      <a href="about.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">About</a>
+      <a href="journey.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Journey</a>
+      <a href="leadership.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Leadership</a>
+      <a href="ventures.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Ventures</a>
+      <a href="products.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Products</a>
+      <a href="technology.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Technology</a>
+      <a href="insights.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Insights</a>
+      <a href="articles.html" class="block py-1.5 text-executive-gold font-bold">Articles</a>
+      <a href="speaking.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Speaking</a>
+      <a href="social-impact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Social Impact</a>
+      <a href="awards.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Credentials</a>
+      <a href="media-gallery.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Gallery</a>
+      <a href="contact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Contact</a>
+      <div class="pt-4 border-t border-border-hairline">
+        <a href="contact.html" class="block w-full py-3 bg-primary text-white text-center font-semibold rounded">Partner With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Article Hero -->
+  <header class="pt-16 pb-12 max-w-4xl mx-auto px-6 text-center">
+    <span class="font-mono-technical text-xs text-executive-gold uppercase tracking-widest block mb-3 font-semibold">SOFTWARE DESIGN</span>
+    <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-primary mb-6 font-normal leading-tight">
+      Why Being a Father Changed the Way I Design Software
+    </h1>
+    <p class="font-editorial-md text-lg sm:text-xl md:text-2xl text-gray-600 italic max-w-3xl mx-auto mb-6">
+      There are two kinds of silence I’ve experienced in my life. One is in a boardroom—when a complex system is presented, and everyone nods, but no one fully understands.
+    </p>
+    <div class="flex items-center justify-center space-x-4 font-mono-technical text-xs text-gray-500 uppercase tracking-wider pt-4 border-t border-border-hairline max-w-md mx-auto">
+      <span>27 APRIL 2026</span>
+      <span>·</span>
+      <span>8 MIN READ</span>
+      <span>·</span>
+      <span>BY YATIN SANJEEV KANEKAR</span>
+    </div>
+  </header>
+
+  <!-- Article Hero Image Container -->
+  <div class="max-w-[1060px] mx-auto px-6 mb-16">
+    <div class="bg-white border border-border-hairline rounded-lg p-2 shadow-xs overflow-hidden">
+      <img src="https://yatinsanjeevkanekar.in/uploads/blogs/554f7d0bb1912eba.png" alt="Why Being a Father Changed the Way I Design Software" class="w-full h-80 sm:h-[480px] object-cover rounded">
+    </div>
+  </div>
+
+  <!-- Main Article Body -->
+  <main class="flex-grow max-w-[740px] mx-auto px-6 pb-20 text-gray-800 space-y-8 text-base sm:text-lg leading-relaxed">
+    
+    <p class="text-xl font-editorial-md italic text-gray-700">
+      The other is at home—when my child looks at me after I’ve explained something… and says nothing.
+    </p>
+    <p>Just confusion in their eyes.</p>
+    <p>And strangely, that second silence has taught me far more about software design than the first ever did.</p>
+
+    <!-- Section 1 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Night That Stayed With Me</h2>
+      <p>One night, I was explaining something very simple.</p>
+      <p>A small routine. A few steps. Nothing complicated—at least, that’s what I believed.</p>
+      <p>I explained it once.</p>
+      <p>Then again.</p>
+      <p>Then differently.</p>
+      <p>Then with an example.</p>
+      <p>And then I stopped… not because I was done explaining, but because I finally started observing.</p>
+      <p>The hesitation. The misinterpretation. The gaps.</p>
+      <p>And in that moment, something shifted.</p>
+      <p>It wasn’t that the child couldn’t understand.</p>
+      <p class="font-semibold text-primary">It was that I had designed the explanation assuming they already knew what I knew.</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">And That’s Exactly What We Do at Work</h2>
+      <p>Whether you’re an employee using a system… A manager onboarding a team… Or a founder building a product…</p>
+      <p>We’ve all been here:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>You open a dashboard and don’t know where to click first</li>
+        <li>You attend a training session for a “simple tool” that takes hours</li>
+        <li>You ask a colleague, “Can you quickly show me how this works?”</li>
+        <li>You avoid using a system—not because it’s useless, but because it’s exhausting</li>
+      </ul>
+      <p>And on the other side:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>You’ve built something you’re proud of</li>
+        <li>You’ve added features to make it “complete”</li>
+        <li>You’ve designed flows that make sense to you</li>
+        <li>And yet… people struggle to use it</li>
+      </ul>
+      <p>This gap—between <em>what is built</em> and <em>what is understood</em>—is where most systems fail.</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Pattern I Could No Longer Ignore</h2>
+      <p>After that moment at home, I started seeing the same pattern everywhere:</p>
+      <p>In enterprise tools. In internal dashboards. In CRMs, ERPs, and mobile apps.</p>
+      <p>The pattern was simple:</p>
+      <p class="font-semibold text-primary">We design for familiarity, not for first-time understanding.</p>
+      <p>We assume:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>“This is obvious”</li>
+        <li>“Users will figure it out”</li>
+        <li>“We can train them later”</li>
+      </ul>
+      <p>But here’s the uncomfortable truth:</p>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        If something needs to be taught repeatedly, it wasn’t designed clearly in the first place.
+      </blockquote>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">A Small Example That Says a Lot</h2>
+      <p>Think about something as basic as submitting an expense claim.</p>
+      <p>In many organizations, it involves:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Multiple fields with unclear labels</li>
+        <li>Dropdowns that require prior knowledge</li>
+        <li>Approval flows that are invisible</li>
+        <li>Errors that don’t explain themselves</li>
+      </ul>
+      <p>Now compare that with explaining a child how to do a simple task:</p>
+      <p>You don’t say: “Execute step 3 after validating dependencies.”</p>
+      <p>You say: “First do this. Then this. If this happens, do this.”</p>
+      <p>Clear. Sequential. Human.</p>
+      <p class="font-semibold text-primary">Why don’t our systems speak like that?</p>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Real Reason Complexity Exists</h2>
+      <p>We often justify complexity as “business requirements.”</p>
+      <p>But in many cases, it comes from somewhere else:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>The need to make systems look powerful</li>
+        <li>The tendency to overbuild for rare scenarios</li>
+        <li>The desire to include everything in one place</li>
+        <li>The assumption that more features = more value</li>
+      </ul>
+      <p>And sometimes, if we’re honest…</p>
+      <p class="font-semibold text-primary">We build complexity because simplicity feels too basic for our effort.</p>
+      <p>But simplicity is not basic. It’s disciplined.</p>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">What Fatherhood Quietly Taught Me</h2>
+      <p>When you’re with a child, you don’t get appreciation for being complex.</p>
+      <p>You get results only when you are clear.</p>
+      <p>You learn to:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Break things down without losing meaning</li>
+        <li>Remove anything unnecessary</li>
+        <li>Repeat without frustration</li>
+        <li>Watch for confusion more than completion</li>
+        <li>Adapt until understanding happens</li>
+      </ul>
+      <p>And that mindset changes everything. Because software, at its core, is also communication.</p>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">A Different Way to Think About Software</h2>
+      <p>Today, whether we are designing for clients, teams, or end users, the lens has changed.</p>
+      <p>We don’t just ask: <em>“Is this feature complete?”</em></p>
+      <p>We ask:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>“Will someone hesitate here?”</li>
+        <li>“What will a new user feel in the first 10 seconds?”</li>
+        <li>“Where will they get stuck—and why?”</li>
+        <li>“Are we guiding them… or testing them?”</li>
+      </ul>
+      <p>Because every moment of confusion has a cost. Not just in time, but in trust.</p>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Why This Matters to Everyone in the Organization</h2>
+      <p>This is not just a developer’s responsibility.</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>For employees → it affects how confidently you work</li>
+        <li>For managers → it affects how quickly your team adapts</li>
+        <li>For leadership → it affects how efficiently the organization scales</li>
+      </ul>
+      <p>A confusing system doesn’t just slow work. <strong class="text-primary">It silently reduces confidence across the organization.</strong></p>
+      <p>And over time, people don’t complain. They just disengage.</p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Where Infipre Stands</h2>
+      <p>At Infipre, we’ve become very intentional about one thing:</p>
+      <p>We don’t design systems to impress. We design systems to disappear.</p>
+      <p>Systems where:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Users don’t need to remember steps</li>
+        <li>Teams don’t depend on constant support</li>
+        <li>Actions feel natural, not instructed</li>
+      </ul>
+      <p>Because the real success of software is not when it is appreciated. It’s when it becomes effortless.</p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The One Test That Matters</h2>
+      <p>I’ve started using a simple test internally. Not technical. Not architectural. Just human.</p>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        If someone new sits in front of the system… will they move forward confidently, or look around for help?
+      </blockquote>
+      <p>That answer tells you everything.</p>
+    </section>
+
+    <!-- Section 11 -->
+    <section class="space-y-4 pt-4 border-t border-border-hairline">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Closing Thought</h2>
+      <p>That quiet moment with my child didn’t just change how I explain things. It changed how I see understanding itself.</p>
+      <p>Clarity is not about simplifying words. It’s about respecting the person on the other side.</p>
+      <p>And whether it’s a child learning something new… or a professional navigating a system…</p>
+      <p class="font-semibold text-primary">The responsibility is the same: Make it so clear… that it feels natural.</p>
+      <p class="font-editorial-md text-xl text-primary italic pt-2">
+        “Because in the end, the best systems don’t teach you how to use them. They make you feel like you already know.”
+      </p>
+    </section>
+
+    <!-- Author & Secondary Navigation Block -->
+    <div class="pt-12 border-t border-border-hairline space-y-8">
+      
+      <div class="flex items-center justify-between">
+        <a href="articles.html" class="font-mono-technical text-xs text-gray-500 uppercase tracking-widest hover:text-executive-gold transition-colors text-decoration-none">
+          ← Back to Articles Archive
+        </a>
+      </div>
+
+      <!-- Author Card -->
+      <div class="bg-white border border-border-hairline rounded-lg p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xs">
+        <img src="assets/images/yatin-portrait.jpg" alt="Yatin Sanjeev Kanekar" class="w-20 h-20 rounded-full object-cover border border-border-hairline flex-shrink-0">
+        <div class="space-y-2 text-center sm:text-left">
+          <h3 class="font-display-lg text-2xl text-primary">Yatin Sanjeev Kanekar</h3>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-600 leading-relaxed max-w-xl">
+            Founder of Infipre IT Services, SaaS product architect, and mentor. Writing on software architecture, applied AI, and organizational scale.
+          </p>
+        </div>
+      </div>
+
+      <!-- Strategic Opportunity Callout CTA -->
+      <div class="bg-white border border-border-hairline rounded-lg p-8 text-center space-y-3">
+        <h3 class="font-display-lg text-2xl text-primary font-normal">Have a perspective or software challenge to discuss?</h3>
+        <p class="text-xs text-gray-600 max-w-md mx-auto">Let's connect on software design, executive advisory, or product partnerships.</p>
+        <a href="contact.html" class="inline-flex items-center py-2.5 px-6 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none">
+          Partner With Me →
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Master Premium Executive Footer -->
+  <footer class="bg-primary text-white py-14 px-6 border-t border-border-hairline">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Top Grid: Area 1, Area 2, Area 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        
+        <!-- Area 1: Brand & Identity -->
+        <div class="md:col-span-4 space-y-3">
+          <a href="index.html" class="inline-block mb-1">
+            <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-10 w-auto object-contain brightness-200">
+          </a>
+          <h2 class="font-display-lg text-2xl text-white font-normal leading-snug">Yatin Sanjeev Kanekar</h2>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Strategic technology leadership across custom software engineering, applied AI, enterprise platforms, and venture building.
+          </p>
+        </div>
+
+        <!-- Area 2: Multi-Column Navigation -->
+        <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono-technical">
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Explore</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey</a></li>
+              <li><a href="leadership.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Leadership</a></li>
+              <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Build</h3>
+            <ul class="space-y-2">
+              <li><a href="products.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products</a></li>
+              <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
+              <li><a href="articles.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles</a></li>
+              <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Connect</h3>
+            <ul class="space-y-2">
+              <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Credentials</a></li>
+              <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Area 3: Strategic CTA -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="font-display-lg text-lg text-white font-normal">Have a strategic opportunity in mind?</h3>
+          <p class="text-xs text-gray-400">Let's build what matters for the next decade of growth.</p>
+          <a href="contact.html" class="inline-flex items-center py-2.5 px-5 bg-executive-gold text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">
+            Partner With Me →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Area 4: Brand Statement & Copyright -->
+      <div class="pt-8 text-center space-y-4">
+        <p class="font-editorial-md text-sm sm:text-base italic text-gray-400 max-w-xl mx-auto">
+          “Clarity of purpose is the foundation of institutional longevity.”
+        </p>
+        <p class="font-mono-technical text-xs text-gray-500">
+          © 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Institutional Grade Security Enabled.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/mobile-nav.js"></script>
+  <script>
+    // Reading Progress Bar Handler
+    window.addEventListener('scroll', function() {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progress = document.getElementById('reading-progress');
+      if (progress) { progress.style.width = scrolled + '%'; }
+    });
+  </script>
+</body>
+</html>

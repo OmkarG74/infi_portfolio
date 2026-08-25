@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>We Built Better Lives… But Are We Living Them? — Yatin Sanjeev Kanekar</title>
+  <meta name="description" content="Essays on simplicity, Goan heritage, balance, and human connection by Yatin Sanjeev Kanekar.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts — Stitch Executive Light Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#0c1014",
+            "executive-gold": "#B0925A",
+            "background": "#fcf8f8",
+            "border-hairline": "rgba(33, 37, 41, 0.1)",
+            "surface-low": "#f6f3f3"
+          },
+          "fontFamily": {
+            "label-caps": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display-lg": ["EB Garamond", "serif"],
+            "mono-technical": ["Geist", "monospace"],
+            "editorial-md": ["EB Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-executive-gold z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- Master Fixed Executive Header (Source of Truth) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-border-hairline shadow-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
+      
+      <!-- Brand Zone -->
+      <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0">
+        <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center space-x-4 xl:space-x-5 text-[11px] font-label-caps uppercase tracking-wider whitespace-nowrap">
+        <a href="index.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">About</a>
+        <a href="journey.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Journey</a>
+        <a href="leadership.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Leadership</a>
+        <a href="ventures.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Ventures</a>
+        <a href="products.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Products</a>
+        <a href="technology.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Technology</a>
+        <a href="insights.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Insights</a>
+        <a href="articles.html" class="text-executive-gold font-bold py-1 border-b-2 border-executive-gold">Articles</a>
+        <a href="speaking.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Speaking</a>
+        <a href="contact.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Far Right Action CTA & Mobile Toggle -->
+      <div class="flex items-center space-x-3 flex-shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex items-center py-2 px-4.5 bg-primary text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none whitespace-nowrap">
+          Partner With Me
+        </a>
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-border-hairline px-6 py-6 space-y-2.5 font-label-caps uppercase text-xs">
+      <a href="index.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Home</a>
+      <a href="about.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">About</a>
+      <a href="journey.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Journey</a>
+      <a href="leadership.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Leadership</a>
+      <a href="ventures.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Ventures</a>
+      <a href="products.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Products</a>
+      <a href="technology.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Technology</a>
+      <a href="insights.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Insights</a>
+      <a href="articles.html" class="block py-1.5 text-executive-gold font-bold">Articles</a>
+      <a href="speaking.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Speaking</a>
+      <a href="social-impact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Social Impact</a>
+      <a href="awards.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Credentials</a>
+      <a href="media-gallery.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Gallery</a>
+      <a href="contact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Contact</a>
+      <div class="pt-4 border-t border-border-hairline">
+        <a href="contact.html" class="block w-full py-3 bg-primary text-white text-center font-semibold rounded">Partner With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Article Hero -->
+  <header class="pt-16 pb-12 max-w-4xl mx-auto px-6 text-center">
+    <span class="font-mono-technical text-xs text-executive-gold uppercase tracking-widest block mb-3 font-semibold font-mono">PHILOSOPHY & LIFE</span>
+    <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-primary mb-6 font-normal leading-tight">
+      We Built Better Lives… But Are We Living Them?
+    </h1>
+    <p class="font-editorial-md text-lg sm:text-xl md:text-2xl text-gray-600 italic max-w-3xl mx-auto mb-6">
+      There was a time—not too long ago—when life in a Goan home moved gently, yet meaningfully.
+    </p>
+    <div class="flex items-center justify-center space-x-4 font-mono-technical text-xs text-gray-500 uppercase tracking-wider pt-4 border-t border-border-hairline max-w-md mx-auto">
+      <span>27 APRIL 2026</span>
+      <span>·</span>
+      <span>7 MIN READ</span>
+      <span>·</span>
+      <span>BY YATIN SANJEEV KANEKAR</span>
+    </div>
+  </header>
+
+  <!-- Article Hero Image Container -->
+  <div class="max-w-[1060px] mx-auto px-6 mb-16">
+    <div class="bg-white border border-border-hairline rounded-lg p-2 shadow-xs overflow-hidden">
+      <img src="https://yatinsanjeevkanekar.in/uploads/blogs/1977ccf642df0905.png" alt="We Built Better Lives… But Are We Living Them?" class="w-full h-80 sm:h-[480px] object-cover rounded">
+    </div>
+  </div>
+
+  <!-- Main Article Body -->
+  <main class="flex-grow max-w-[740px] mx-auto px-6 pb-20 text-gray-800 space-y-8 text-base sm:text-lg leading-relaxed">
+    
+    <p class="text-xl font-editorial-md italic text-gray-700">
+      A small house with a <em>balcao</em>. A backyard with a simple <em>nhãn</em>. Sometimes no attached bathroom. Sometimes not even a <em>sandas</em> inside.
+    </p>
+    <p>And yet… life felt full.</p>
+    <p>Not because people had less. But because they needed less to feel complete.</p>
+
+    <!-- Section 1 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Life That Built Us</h2>
+      <p>Mornings began with small routines.</p>
+      <p>Drawing water from the well. Waiting for your turn at the <em>nhãn</em>. Someone knocking on the door.</p>
+      <p>There was waiting—but no frustration.</p>
+      <p>Because waiting meant talking. Talking meant bonding.</p>
+      <p>Evenings were even more special.</p>
+      <p>If there was a TV, it was just one. Neighbours walked in freely. Children sat on the floor, elders on chairs.</p>
+      <p>One screen. Many smiles.</p>
+      <p>Meals were simple.</p>
+      <p>Cooked in earthen pots. Served hot. Shared fully.</p>
+      <p>There was no concept of “my time” or “my space.”</p>
+      <p class="font-semibold text-primary">Everything was… ours.</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Truth About Our Parents</h2>
+      <p>Our parents were not laid back.</p>
+      <p>Goans. Indians. They have always been hardworking.</p>
+      <p>They woke up early. Managed homes. Handled jobs, farms, businesses. Balanced responsibilities without complaint.</p>
+      <p>They didn’t have luxury. But they had <strong>strength, discipline, and clarity</strong>.</p>
+      <p>And most importantly, they had one dream:</p>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        “Our children should have a better life than us.”
+      </blockquote>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">When Love Quietly Turns Into Pressure</h2>
+      <p>And so it began.</p>
+      <p>Better schools. Better facilities. Better exposure. Better opportunities.</p>
+      <p>Nothing wrong.</p>
+      <p>But somewhere, “better life” slowly became:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Bigger achievements</li>
+        <li>Higher salaries</li>
+        <li>More comfort</li>
+        <li>More success</li>
+      </ul>
+      <p>And silently, one more layer got added…</p>
+      <p class="font-editorial-md text-xl italic text-primary">“My child should achieve what I could not.”</p>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">From One ‘Nhãn’ to Many Rooms</h2>
+      <p>The child grows.</p>
+      <p>From a house with one <em>nhãn</em>… to homes with multiple bathrooms. From one shared TV… to screens in every room. From walking together… to individual vehicles for everyone.</p>
+      <p>We removed inconvenience.</p>
+      <p>But along with it… we removed interaction.</p>
+      <p>Earlier, one <em>nhãn</em> meant everyone crossed paths daily.</p>
+      <p>Today, five bathrooms mean… we don’t even see each other.</p>
+      <p>Earlier, even without a <em>sandas</em> inside, people felt secure.</p>
+      <p>Today, with everything inside the house… something still feels missing.</p>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Easy Money, Busy Lives, Silent Homes</h2>
+      <p>With globalization, life has changed.</p>
+      <p>Opportunities increased. Income improved. Work expanded beyond time zones.</p>
+      <p>And this is good.</p>
+      <p>A growing nation needs hardworking people. We are not meant to be idle. We are meant to progress.</p>
+      <p>But in this progress…</p>
+      <p>Our days became fuller. Our homes became quieter.</p>
+      <p>Parents are busy building the future. Children are busy preparing for it.</p>
+      <p>And somewhere in between… the present is slipping away.</p>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Question We Avoid Asking</h2>
+      <p>We say we are doing everything for our children.</p>
+      <p>But pause for a moment and ask:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Are we pushing them to grow… or to fulfill our unfinished dreams?</li>
+        <li>Are we preparing them for life… or protecting them too much from it?</li>
+        <li>Are we giving them comfort… or making them too comfortable?</li>
+      </ul>
+      <p>Because the real world is not always easy. And a child who only knows comfort may struggle with reality.</p>
+      <p>At the same time, a child who only knows pressure may forget how to live.</p>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Strange Pull Towards Simplicity</h2>
+      <p>That’s why today, despite everything, we see a shift.</p>
+      <p>People wanting:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Food cooked in clay pots</li>
+        <li>A simple cup of chai</li>
+        <li>Quiet evenings with family</li>
+      </ul>
+      <p>Not because they lack options. But because they are searching for something deeper.</p>
+      <p>Something they may not even have experienced fully… but somehow still miss.</p>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">What Did We Really Lose?</h2>
+      <p>We didn’t lose facilities.</p>
+      <p>We lost:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Unplanned conversations</li>
+        <li>Shared routines</li>
+        <li>Everyday togetherness</li>
+      </ul>
+      <p>We gained comfort. But we reduced connection.</p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">A Balance We Must Relearn</h2>
+      <p>This is not about going back.</p>
+      <p>We don’t need to remove bathrooms or switch off all screens.</p>
+      <p>This is about awareness.</p>
+      <p>About knowing:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>When to push… and when to pause</li>
+        <li>When to provide… and when to let them experience</li>
+        <li>When to work… and when to sit together</li>
+      </ul>
+      <p>Because a good life is not just about success. It is about <strong>balance</strong>.</p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="space-y-4 pt-4 border-t border-border-hairline">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Ending Thought</h2>
+      <p>Our parents gave us everything they could. Not perfectly. But honestly.</p>
+      <p>Now, we are doing the same.</p>
+      <p>But maybe, just maybe… we need to ask one simple question:</p>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        Are we raising successful children… or content human beings?
+      </blockquote>
+      <p>Because in the end…</p>
+      <p>A child doesn’t remember how many rooms the house had.</p>
+      <p class="font-editorial-md text-xl text-primary italic pt-2">
+        “They remember… who was there with them inside it.”
+      </p>
+    </section>
+
+    <!-- Author & Secondary Navigation Block -->
+    <div class="pt-12 border-t border-border-hairline space-y-8">
+      
+      <div class="flex items-center justify-between">
+        <a href="articles.html" class="font-mono-technical text-xs text-gray-500 uppercase tracking-widest hover:text-executive-gold transition-colors text-decoration-none">
+          ← Back to Articles Archive
+        </a>
+      </div>
+
+      <!-- Author Card -->
+      <div class="bg-white border border-border-hairline rounded-lg p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xs">
+        <img src="assets/images/yatin-portrait.jpg" alt="Yatin Sanjeev Kanekar" class="w-20 h-20 rounded-full object-cover border border-border-hairline flex-shrink-0">
+        <div class="space-y-2 text-center sm:text-left">
+          <h3 class="font-display-lg text-2xl text-primary">Yatin Sanjeev Kanekar</h3>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-600 leading-relaxed max-w-xl">
+            Founder of Infipre IT Services, SaaS product architect, and mentor. Writing on software architecture, applied AI, and organizational scale.
+          </p>
+        </div>
+      </div>
+
+      <!-- Strategic Opportunity Callout CTA -->
+      <div class="bg-white border border-border-hairline rounded-lg p-8 text-center space-y-3">
+        <h3 class="font-display-lg text-2xl text-primary font-normal">Have a perspective or software challenge to discuss?</h3>
+        <p class="text-xs text-gray-600 max-w-md mx-auto">Let's connect on software design, executive advisory, or product partnerships.</p>
+        <a href="contact.html" class="inline-flex items-center py-2.5 px-6 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none">
+          Partner With Me →
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Master Premium Executive Footer -->
+  <footer class="bg-primary text-white py-14 px-6 border-t border-border-hairline">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Top Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        
+        <!-- Area 1: Brand & Identity -->
+        <div class="md:col-span-4 space-y-3">
+          <a href="index.html" class="inline-block mb-1">
+            <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-10 w-auto object-contain brightness-200">
+          </a>
+          <h2 class="font-display-lg text-2xl text-white font-normal leading-snug">Yatin Sanjeev Kanekar</h2>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Strategic technology leadership across custom software engineering, applied AI, enterprise platforms, and venture building.
+          </p>
+        </div>
+
+        <!-- Area 2: Multi-Column Navigation -->
+        <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono-technical">
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Explore</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey</a></li>
+              <li><a href="leadership.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Leadership</a></li>
+              <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Build</h3>
+            <ul class="space-y-2">
+              <li><a href="products.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products</a></li>
+              <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
+              <li><a href="articles.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles</a></li>
+              <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Connect</h3>
+            <ul class="space-y-2">
+              <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Credentials</a></li>
+              <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Area 3: Strategic CTA -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="font-display-lg text-lg text-white font-normal">Have a strategic opportunity in mind?</h3>
+          <p class="text-xs text-gray-400">Let's build what matters for the next decade of growth.</p>
+          <a href="contact.html" class="inline-flex items-center py-2.5 px-5 bg-executive-gold text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">
+            Partner With Me →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Area 4: Brand Statement & Copyright -->
+      <div class="pt-8 text-center space-y-4">
+        <p class="font-editorial-md text-sm sm:text-base italic text-gray-400 max-w-xl mx-auto">
+          “Clarity of purpose is the foundation of institutional longevity.”
+        </p>
+        <p class="font-mono-technical text-xs text-gray-500">
+          © 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Institutional Grade Security Enabled.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/mobile-nav.js"></script>
+  <script>
+    // Reading Progress Bar Handler
+    window.addEventListener('scroll', function() {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progress = document.getElementById('reading-progress');
+      if (progress) { progress.style.width = scrolled + '%'; }
+    });
+  </script>
+</body>
+</html>

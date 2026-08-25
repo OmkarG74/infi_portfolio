@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Yatin Sanjeev Kanekar — CEO & Technology Leader</title>
+  <meta name="description" content="Official Executive Terminal of Yatin Sanjeev Kanekar. CEO, Technology Strategist, Founder and Industry Mentor based in Sanquelim, Goa, India.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts — Stitch Executive Light Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#0c1014",
+            "executive-gold": "#B0925A",
+            "background": "#fcf8f8",
+            "border-hairline": "rgba(33, 37, 41, 0.1)",
+            "surface-low": "#f6f3f3"
+          },
+          "fontFamily": {
+            "label-caps": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display-lg": ["EB Garamond", "serif"],
+            "mono-technical": ["Geist", "monospace"],
+            "editorial-md": ["EB Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Master Fixed Executive Header (Source of Truth) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border-hairline shadow-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
+      
+      <!-- Brand Zone: ONLY YK Logo Asset (No Text Name) -->
+      <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0">
+        <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center space-x-4 xl:space-x-5 text-[11px] font-label-caps uppercase tracking-wider whitespace-nowrap">
+        <a href="index.html" class="text-executive-gold font-bold py-1 border-b-2 border-executive-gold">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">About</a>
+        <a href="journey.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Journey</a>
+        <a href="leadership.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Leadership</a>
+        <a href="ventures.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Ventures</a>
+        <a href="products.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Products</a>
+        <a href="technology.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Technology</a>
+        <a href="insights.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Insights</a>
+        <a href="articles.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Articles</a>
+        <a href="speaking.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Speaking</a>
+        <a href="contact.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Far Right Action CTA & Mobile Toggle -->
+      <div class="flex items-center space-x-3 flex-shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex items-center py-2 px-4.5 bg-primary text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none whitespace-nowrap">
+          Partner With Me
+        </a>
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-border-hairline px-6 py-6 space-y-2.5 font-label-caps uppercase text-xs">
+      <a href="index.html" class="block py-1.5 text-executive-gold font-bold">Home</a>
+      <a href="about.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">About</a>
+      <a href="journey.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Journey</a>
+      <a href="leadership.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Leadership</a>
+      <a href="ventures.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Ventures</a>
+      <a href="products.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Products</a>
+      <a href="technology.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Technology</a>
+      <a href="insights.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Insights</a>
+      <a href="articles.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Articles</a>
+      <a href="speaking.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Speaking</a>
+      <a href="social-impact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Social Impact</a>
+      <a href="awards.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Credentials</a>
+      <a href="media-gallery.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Gallery</a>
+      <a href="contact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Contact</a>
+      <div class="pt-4 border-t border-border-hairline">
+        <a href="contact.html" class="block w-full py-3 bg-primary text-white text-center font-semibold rounded">Partner With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative py-16 sm:py-24 bg-cover bg-center text-white" style="background: linear-gradient(to right, rgba(12, 16, 20, 0.90), rgba(12, 16, 20, 0.70)), url('assets/images/yatin-office.jpg') no-repeat center center / cover;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7">
+          <span class="font-mono-technical text-xs text-blue-400 font-bold tracking-widest block mb-4 uppercase">EXECUTIVE OVERVIEW</span>
+          <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-6xl text-white font-normal leading-tight mb-6">
+            Architecting the Future of Enterprise.
+          </h1>
+          <p class="font-editorial-md text-lg sm:text-xl text-gray-200 font-light mb-8 max-w-xl leading-relaxed italic">
+            Visionary leadership at the intersection of high-performance software engineering, applied AI, and global capital.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="ventures.html" class="py-3 px-6 sm:px-8 bg-white text-primary text-xs font-semibold uppercase tracking-wider rounded hover:bg-executive-gold hover:text-white transition-colors text-decoration-none">Explore Ventures</a>
+            <a href="contact.html" class="py-3 px-6 sm:px-8 border border-white text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">Initiate Contact</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded text-primary border-l-4 border-executive-gold shadow-lg">
+            <span class="font-mono-technical text-xs text-gray-500 block mb-1">CAPITAL & SCALE</span>
+            <div class="font-display-lg text-2xl sm:text-3xl font-semibold mb-1">15+ Years</div>
+            <p class="text-xs text-gray-600 mb-0">Strategic deployment across global software ecosystems.</p>
+          </div>
+          <div class="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded text-primary border-l-4 border-executive-gold shadow-lg">
+            <span class="font-mono-technical text-xs text-gray-500 block mb-1">TRACK RECORD</span>
+            <div class="font-display-lg text-2xl sm:text-3xl font-semibold mb-1">75+ Projects</div>
+            <p class="text-xs text-gray-600 mb-0">Consistent delivery of high-precision enterprise applications.</p>
+          </div>
+          <div class="bg-white/95 backdrop-blur-md p-5 sm:p-6 rounded text-primary border-l-4 border-executive-gold shadow-lg">
+            <span class="font-mono-technical text-xs text-gray-500 block mb-1">SYSTEM STATUS</span>
+            <div class="text-sm font-semibold mb-1 flex items-center gap-2">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span> 90%+ Retention Rate
+            </div>
+            <p class="text-xs text-gray-600 mb-0">Operational excellence scaled across 6+ countries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venture Logos Matrix Showcase -->
+  <section class="py-12 bg-white border-b border-border-hairline">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="font-mono-technical text-xs text-center text-gray-400 uppercase tracking-widest mb-8">VENTURES & PLATFORM ECOSYSTEM</p>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 items-center">
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-infipre.png" alt="Infipre IT Services" class="max-h-10 max-w-full object-contain">
+        </div>
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-infisales360.png" alt="InfiSales360" class="max-h-10 max-w-full object-contain">
+        </div>
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-powerfleet360.png" alt="PowerFleet360" class="max-h-10 max-w-full object-contain">
+        </div>
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-maya-hr.png" alt="MAYA HR" class="max-h-10 max-w-full object-contain">
+        </div>
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-goodylms.png" alt="GoodyLMS" class="max-h-10 max-w-full object-contain">
+        </div>
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-mangalkaarya.png" alt="Mangal Kaarya" class="max-h-10 max-w-full object-contain">
+        </div>
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-poocrafts.png" alt="PooCrafts" class="max-h-10 max-w-full object-contain">
+        </div>
+        <div class="flex justify-center items-center h-16 p-3 bg-white rounded border border-border-hairline hover:border-executive-gold shadow-xs transition-colors">
+          <img src="assets/images/ventures/logo-satpurush.png" alt="Satpurush" class="max-h-10 max-w-full object-contain">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Thesis Section -->
+  <section class="py-16 max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-2">PORTFOLIO MATRIX</span>
+      <h2 class="font-display-lg text-3xl sm:text-4xl text-primary mb-3">Core Ventures & Tech Thesis</h2>
+      <p class="font-editorial-md text-base sm:text-lg text-gray-600 italic">Capital and technical allocation focused on software composability, applied AI, and enterprise systems.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white border border-border-hairline rounded p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <img src="assets/images/ventures/logo-infipre.png" alt="Infipre" class="h-10 w-auto object-contain mb-4">
+        <span class="font-mono-technical text-xs text-gray-500 block mb-1">ALLOCATION: 35%</span>
+        <h3 class="font-display-lg text-2xl text-primary mb-2">Core Software</h3>
+        <p class="text-sm text-gray-600 mb-6 leading-relaxed">Custom enterprise software engineering, QA automation, and cloud infrastructure consulting.</p>
+        <a href="ventures.html" class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-wider hover:underline">View Thesis →</a>
+      </div>
+
+      <div class="bg-white border border-border-hairline rounded p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <img src="assets/images/ventures/logo-infisales360.png" alt="InfiSales360" class="h-10 w-auto object-contain mb-4">
+        <span class="font-mono-technical text-xs text-gray-500 block mb-1">ALLOCATION: 45%</span>
+        <h3 class="font-display-lg text-2xl text-primary mb-2">Applied AI</h3>
+        <p class="text-sm text-gray-600 mb-6 leading-relaxed">Proprietary LLM agents, predictive sales CRM, and synthetic data generation workflows.</p>
+        <a href="products.html" class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-wider hover:underline">View Thesis →</a>
+      </div>
+
+      <div class="bg-white border border-border-hairline rounded p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <img src="assets/images/ventures/logo-powerfleet360.png" alt="PowerFleet360" class="h-10 w-auto object-contain mb-4">
+        <span class="font-mono-technical text-xs text-gray-500 block mb-1">ALLOCATION: 20%</span>
+        <h3 class="font-display-lg text-2xl text-primary mb-2">Physical Infra</h3>
+        <p class="text-sm text-gray-600 mb-6 leading-relaxed">IoT fleet tracking, DG fuel monitoring sensors, and logistical supply chain software.</p>
+        <a href="products.html" class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-wider hover:underline">View Thesis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client & Peer Testimonials Showcase -->
+  <section class="py-16 bg-surface-low border-t border-b border-border-hairline">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-2">TESTIMONIALS</span>
+        <h2 class="font-display-lg text-3xl sm:text-4xl text-primary mb-3">Client & Colleague Endorsements</h2>
+        <p class="font-editorial-md text-base sm:text-lg text-gray-600 italic">Reflections on technical capability, work ethics, and strategic partnership.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="bg-white border border-border-hairline rounded p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic mb-6">
+            “I worked with Yatin on the Reliance Jio Launch project at Tech Mahindra. He is calm, technically skilled, and focused on achieving organizational goals without engaging in office politics. I’m confident he will build a sustainable organization that benefits society, employees, and customers alike.”
+          </p>
+          <div class="pt-4 border-t border-border-hairline">
+            <h4 class="font-display-lg text-lg text-primary mb-0 font-normal">Imran Masurkar</h4>
+            <span class="font-mono-technical text-[10px] text-executive-gold uppercase tracking-wider block">Tech Mahindra Partner</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white border border-border-hairline rounded p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic mb-6">
+            “I worked with Yatin on the Reliance Jio Launch project at Tech Mahindra. He is calm, technically skilled, and stays focused on organizational goals without getting involved in office politics. I wish him success in his entrepreneurial journey, confident that he will build a sustainable organization...”
+          </p>
+          <div class="pt-4 border-t border-border-hairline">
+            <h4 class="font-display-lg text-lg text-primary mb-0 font-normal">Malhar Saraph</h4>
+            <span class="font-mono-technical text-[10px] text-executive-gold uppercase tracking-wider block">Senior Tech Leader</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white border border-border-hairline rounded p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic mb-6">
+            “Yatin, CEO of Infipre IT Services, has been known to me through our BNI Synergy Chapter in Goa. He is quiet, sober, and upholds high work ethics. I've admired his commitment, dedication, and skill in asking the right questions to solve problems.”
+          </p>
+          <div class="pt-4 border-t border-border-hairline">
+            <h4 class="font-display-lg text-lg text-primary mb-0 font-normal">Mohiet Hastwala</h4>
+            <span class="font-mono-technical text-[10px] text-executive-gold uppercase tracking-wider block">BNI Synergy Goa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Articles Preview -->
+  <section class="py-16 max-w-6xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between mb-12 gap-4 border-b border-border-hairline pb-6">
+      <div>
+        <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-1">EDITORIAL PERSPECTIVES</span>
+        <h2 class="font-display-lg text-3xl sm:text-4xl text-primary font-normal mb-0">Latest Articles & Essays</h2>
+      </div>
+      <a href="articles.html" class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-wider hover:underline text-decoration-none whitespace-nowrap">
+        View All 8 Articles →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Article 1 -->
+      <article class="bg-white border border-border-hairline rounded-lg overflow-hidden shadow-xs hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="overflow-hidden h-48">
+            <img src="https://yatinsanjeevkanekar.in/uploads/blogs/554f7d0bb1912eba.png" alt="Fatherhood & Software Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-mono-technical text-executive-gold uppercase tracking-widest block mb-2 font-semibold">SOFTWARE DESIGN</span>
+            <h3 class="font-display-lg text-lg text-primary mb-2 group-hover:text-executive-gold transition-colors">
+              <a href="article-fatherhood-software-design.html" class="text-decoration-none text-primary group-hover:text-executive-gold">
+                Why Being a Father Changed the Way I Design Software
+              </a>
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed">Personal reflections on user empathy, simplicity, and designing software that serves real human needs.</p>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-border-hairline text-xs font-mono-technical text-gray-400 flex justify-between items-center">
+          <span>27 Apr 2026</span>
+          <a href="article-fatherhood-software-design.html" class="text-executive-gold font-semibold hover:underline">Read →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="bg-white border border-border-hairline rounded-lg overflow-hidden shadow-xs hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="overflow-hidden h-48">
+            <img src="https://yatinsanjeevkanekar.in/uploads/blogs/1977ccf642df0905.png" alt="We Built Better Lives" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-mono-technical text-executive-gold uppercase tracking-widest block mb-2 font-semibold">PHILOSOPHY</span>
+            <h3 class="font-display-lg text-lg text-primary mb-2 group-hover:text-executive-gold transition-colors">
+              <a href="article-we-built-better-lives.html" class="text-decoration-none text-primary group-hover:text-executive-gold">
+                We Built Better Lives… But Are We Living Them?
+              </a>
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed">A Goan perspective on progress, family connection, and relearning life's essential balance.</p>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-border-hairline text-xs font-mono-technical text-gray-400 flex justify-between items-center">
+          <span>27 Apr 2026</span>
+          <a href="article-we-built-better-lives.html" class="text-executive-gold font-semibold hover:underline">Read →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="bg-white border border-border-hairline rounded-lg overflow-hidden shadow-xs hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="overflow-hidden h-48">
+            <img src="https://yatinsanjeevkanekar.in/uploads/blogs/ae775efcd5930e51.jpg" alt="Warehouse Worker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-6">
+            <span class="text-[10px] font-mono-technical text-executive-gold uppercase tracking-widest block mb-2 font-semibold">SYSTEM DESIGN</span>
+            <h3 class="font-display-lg text-lg text-primary mb-2 group-hover:text-executive-gold transition-colors">
+              <a href="article-warehouse-worker-system-design.html" class="text-decoration-none text-primary group-hover:text-executive-gold">
+                The Day a Warehouse Worker Changed Our System Design
+              </a>
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed">How ground-level practical feedback transformed an ERP system and shop-floor user flows.</p>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-border-hairline text-xs font-mono-technical text-gray-400 flex justify-between items-center">
+          <span>25 Mar 2026</span>
+          <a href="article-warehouse-worker-system-design.html" class="text-executive-gold font-semibold hover:underline">Read →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- Master Premium Executive Footer -->
+  <footer class="bg-primary text-white py-14 px-6 border-t border-border-hairline">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Top Grid: Area 1 (Brand & Identity), Area 2 (Multi-column Nav), Area 3 (Strategic CTA) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        
+        <!-- Area 1: Brand & Identity -->
+        <div class="md:col-span-4 space-y-3">
+          <a href="index.html" class="inline-block mb-1">
+            <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-10 w-auto object-contain brightness-200">
+          </a>
+          <h2 class="font-display-lg text-2xl text-white font-normal leading-snug">Yatin Sanjeev Kanekar</h2>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Strategic technology leadership across custom software engineering, applied AI, enterprise platforms, and venture building.
+          </p>
+        </div>
+
+        <!-- Area 2: Multi-Column Navigation -->
+        <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono-technical">
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Explore</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey</a></li>
+              <li><a href="leadership.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Leadership</a></li>
+              <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Build</h3>
+            <ul class="space-y-2">
+              <li><a href="products.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products</a></li>
+              <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
+              <li><a href="articles.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles</a></li>
+              <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Connect</h3>
+            <ul class="space-y-2">
+              <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Credentials</a></li>
+              <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Area 3: Strategic CTA -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="font-display-lg text-lg text-white font-normal">Have a strategic opportunity in mind?</h3>
+          <p class="text-xs text-gray-400">Let's build what matters for the next decade of growth.</p>
+          <a href="contact.html" class="inline-flex items-center py-2.5 px-5 bg-executive-gold text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">
+            Partner With Me →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Area 4: Brand Statement & Copyright -->
+      <div class="pt-8 text-center space-y-4">
+        <p class="font-editorial-md text-sm sm:text-base italic text-gray-400 max-w-xl mx-auto">
+          “Clarity of purpose is the foundation of institutional longevity.”
+        </p>
+        <p class="font-mono-technical text-xs text-gray-500">
+          © 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Institutional Grade Security Enabled.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/mobile-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>In the Age of AI and Cloud, Discipline—not Technology—Decides Who Wins — Yatin Sanjeev Kanekar</title>
+  <meta name="description" content="Strategic leadership essay on technology execution, organizational discipline, and digital transformation by Yatin Sanjeev Kanekar.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts — Stitch Executive Light Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#0c1014",
+            "executive-gold": "#B0925A",
+            "background": "#fcf8f8",
+            "border-hairline": "rgba(33, 37, 41, 0.1)",
+            "surface-low": "#f6f3f3"
+          },
+          "fontFamily": {
+            "label-caps": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display-lg": ["EB Garamond", "serif"],
+            "mono-technical": ["Geist", "monospace"],
+            "editorial-md": ["EB Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-1 bg-executive-gold z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- Master Fixed Executive Header (Source of Truth) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-border-hairline shadow-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
+      
+      <!-- Brand Zone -->
+      <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0">
+        <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center space-x-4 xl:space-x-5 text-[11px] font-label-caps uppercase tracking-wider whitespace-nowrap">
+        <a href="index.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">About</a>
+        <a href="journey.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Journey</a>
+        <a href="leadership.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Leadership</a>
+        <a href="ventures.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Ventures</a>
+        <a href="products.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Products</a>
+        <a href="technology.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Technology</a>
+        <a href="insights.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Insights</a>
+        <a href="articles.html" class="text-executive-gold font-bold py-1 border-b-2 border-executive-gold">Articles</a>
+        <a href="speaking.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Speaking</a>
+        <a href="contact.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Far Right Action CTA & Mobile Toggle -->
+      <div class="flex items-center space-x-3 flex-shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex items-center py-2 px-4.5 bg-primary text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none whitespace-nowrap">
+          Partner With Me
+        </a>
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-border-hairline px-6 py-6 space-y-2.5 font-label-caps uppercase text-xs">
+      <a href="index.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Home</a>
+      <a href="about.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">About</a>
+      <a href="journey.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Journey</a>
+      <a href="leadership.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Leadership</a>
+      <a href="ventures.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Ventures</a>
+      <a href="products.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Products</a>
+      <a href="technology.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Technology</a>
+      <a href="insights.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Insights</a>
+      <a href="articles.html" class="block py-1.5 text-executive-gold font-bold">Articles</a>
+      <a href="speaking.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Speaking</a>
+      <a href="social-impact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Social Impact</a>
+      <a href="awards.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Credentials</a>
+      <a href="media-gallery.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Gallery</a>
+      <a href="contact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Contact</a>
+      <div class="pt-4 border-t border-border-hairline">
+        <a href="contact.html" class="block w-full py-3 bg-primary text-white text-center font-semibold rounded">Partner With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Article Hero -->
+  <header class="pt-16 pb-12 max-w-4xl mx-auto px-6 text-center">
+    <span class="font-mono-technical text-xs text-executive-gold uppercase tracking-widest block mb-3 font-semibold">STRATEGY & LEADERSHIP</span>
+    <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-primary mb-6 font-normal leading-tight">
+      In the Age of AI and Cloud, Discipline—not Technology—Decides Who Wins
+    </h1>
+    <p class="font-editorial-md text-lg sm:text-xl md:text-2xl text-gray-600 italic max-w-3xl mx-auto mb-6">
+      Your competitors have the same cloud. The same AI tools. The same CRMs, ERPs, dashboards, consultants, frameworks, and playbooks.
+    </p>
+    <div class="flex items-center justify-center space-x-4 font-mono-technical text-xs text-gray-500 uppercase tracking-wider pt-4 border-t border-border-hairline max-w-md mx-auto">
+      <span>01 JANUARY 2026</span>
+      <span>·</span>
+      <span>10 MIN READ</span>
+      <span>·</span>
+      <span>BY YATIN SANJEEV KANEKAR</span>
+    </div>
+  </header>
+
+  <!-- Article Hero Image Container -->
+  <div class="max-w-[1060px] mx-auto px-6 mb-16">
+    <div class="bg-white border border-border-hairline rounded-lg p-2 shadow-xs overflow-hidden">
+      <img src="https://yatinsanjeevkanekar.in/uploads/blogs/0567cfaa94dd2687.jpg" alt="In the Age of AI and Cloud, Discipline—not Technology—Decides Who Wins" class="w-full h-80 sm:h-[480px] object-cover rounded">
+    </div>
+  </div>
+
+  <!-- Main Article Body -->
+  <main class="flex-grow max-w-[740px] mx-auto px-6 pb-20 text-gray-800 space-y-8 text-base sm:text-lg leading-relaxed">
+    
+    <p class="text-xl font-editorial-md italic text-gray-700">
+      Let’s say this out loud—quietly, honestly, without buzzwords.
+    </p>
+    <p class="font-semibold text-xl text-primary">Technology is no longer your advantage.</p>
+    <p>Your competitors have the same cloud. The same AI tools. The same CRMs, ERPs, dashboards, consultants, frameworks, and playbooks.</p>
+    <p>And yet— Some organizations move forward with calm, clarity, and control… While others remain stuck in endless meetings, delayed decisions, and quiet frustration.</p>
+    <p>The difference is no longer <em>what</em> you use.</p>
+    <p class="font-semibold text-primary">The difference is how relentlessly you execute what you decide.</p>
+
+    <!-- Section 1 -->
+    <section class="space-y-4 pt-4 border-t border-border-hairline">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Age of “Everyone Has Tech”</h2>
+      <p>We are living in the most technologically equal time in business history.</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>A startup and an enterprise can run on the same cloud</li>
+        <li>A founder and a CXO both have access to AI copilots</li>
+        <li>Best practices are one Google search away</li>
+        <li>Tools that once cost crores are now monthly subscriptions</li>
+      </ul>
+      <p>And yet, digital failure is everywhere. Not loud failure. Silent failure.</p>
+      <p>Projects that “go live” but never truly work. Systems that exist but are bypassed. Dashboards that look impressive but don’t change behavior.</p>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        Visibility without control. Activity without outcomes. Technology without discipline.
+      </blockquote>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Why This Hurts More Than Ever</h2>
+      <p>Because leaders today are not short of ideas. They are short of <em>follow-through</em>.</p>
+      <p>Founders and CXOs carry a quiet weight:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Decisions are made with good intent</li>
+        <li>Investments are approved with hope</li>
+        <li>Teams are trusted to execute</li>
+      </ul>
+      <p>But months later, the same issues remain—just wrapped in better software.</p>
+      <p>That gap hurts. Not financially first—but emotionally.</p>
+      <p class="italic text-gray-600 font-editorial-md text-lg">“Are we missing something?” “Is the team capable?” “Did we choose the wrong technology?”</p>
+      <p>Most of the time, the answer is no.</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The First Gap: Decision → Execution</h2>
+      <p>In leadership rooms, decisions happen fast.</p>
+      <p>“Let’s digitize approvals.” “Let’s improve transparency.” “Let’s reduce dependency on individuals.”</p>
+      <p>These are not bad decisions. They are <strong>necessary</strong> ones.</p>
+      <p>But then execution begins—and something subtle happens.</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Ownership becomes shared (and diluted)</li>
+        <li>Timelines become flexible</li>
+        <li>Exceptions become frequent</li>
+        <li>Accountability becomes emotional instead of systemic</li>
+      </ul>
+      <p class="font-semibold text-primary">Execution doesn’t fail loudly. It bleeds quietly. And technology watches helplessly.</p>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Second Gap: Tool → Adoption</h2>
+      <p>This gap is where most digital investments quietly die.</p>
+      <p>Organizations assume adoption is a one-time event: Train users, share manuals, conduct a kickoff, declare success.</p>
+      <p>But adoption is not an event. It is a <strong>daily discipline</strong>.</p>
+      <p>People don’t resist technology because they hate it. They resist it because:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>It forces accountability</li>
+        <li>It removes ambiguity</li>
+        <li>It exposes delays</li>
+        <li>It changes power dynamics</li>
+      </ul>
+      <p>Without leadership-backed discipline, users will always find workarounds. Excel returns. WhatsApp approvals continue. Verbal confirmations persist.</p>
+      <p>Not because people are bad. But because <strong>systems without discipline cannot survive culture</strong>.</p>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">A Hard Truth Learned Since 2017</h2>
+      <p>Since 2017, working closely with businesses across sizes and sectors, one realization has become impossible to ignore:</p>
+      <blockquote class="border-l-2 border-executive-gold pl-4 py-1 italic font-editorial-md text-xl text-primary">
+        Digital success has very little to do with intelligence, experience, or budget.
+      </blockquote>
+      <p>It has everything to do with:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Clarity of execution</li>
+        <li>Consistency of enforcement</li>
+        <li>Willingness to be uncomfortable</li>
+      </ul>
+      <p>The most successful organizations we’ve seen were not the most “tech-savvy”. They were the most <strong>execution-disciplined</strong>.</p>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">What Execution Discipline Actually Looks Like</h2>
+      <p>It’s not glamorous. Execution discipline looks like:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Saying “no” to half-baked requirements</li>
+        <li>Defining processes before writing code</li>
+        <li>Enforcing mandatory data entry—even when it slows people initially</li>
+        <li>Measuring delays instead of explaining them away</li>
+        <li>Correcting behavior repeatedly, not once</li>
+      </ul>
+      <p>It’s boring. It’s repetitive. It’s emotionally exhausting at times. That’s exactly why most organizations avoid it.</p>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Why Technology Alone Can’t Save You</h2>
+      <p>Technology is neutral.</p>
+      <p>It doesn’t force ownership, demand accountability, resolve conflicts, or correct habits. It only <strong>amplifies</strong> what already exists.</p>
+      <p class="font-semibold text-primary">Strong discipline → Technology accelerates success. Weak discipline → Technology accelerates failure.</p>
+      <p>Adding AI to broken execution doesn’t make you smarter. It just makes your confusion faster.</p>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Founder & CXO Reality</h2>
+      <p>At some point in the journey, leaders stop asking: <em>“What tool should we buy next?”</em></p>
+      <p>And start asking: <em>“Why aren’t things moving despite everything we’ve done?”</em></p>
+      <p>This is the moment of maturity. The moment you realize strategy is easy, vision is inspiring, but execution is brutal. And execution cannot be outsourced.</p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="space-y-4 pt-4">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">The Contrarian Insight</h2>
+      <p>Most organizations don’t need another platform, another consultant, another dashboard, or another AI integration.</p>
+      <p>They need:</p>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li>Fewer decisions, better executed</li>
+        <li>Fewer tools, fully adopted</li>
+        <li>Fewer exceptions, clearly governed</li>
+        <li>Fewer heroes, stronger systems</li>
+      </ul>
+      <p class="font-semibold text-primary">They need discipline that outlives motivation.</p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="space-y-4 pt-4 border-t border-border-hairline">
+      <h2 class="font-display-lg text-2xl sm:text-3xl text-primary font-normal">Final Thought</h2>
+      <p>Technology has been democratized. Execution discipline has not.</p>
+      <p>That is why two companies with the same tools grow at different speeds. One feels constantly overwhelmed; the other feels quietly in control.</p>
+      <p class="font-editorial-md text-xl text-primary italic pt-2">
+        “In the next decade, winners won’t be those with the best technology stacks. They will be those with the strongest execution muscle.”
+      </p>
+    </section>
+
+    <!-- Author & Secondary Navigation Block -->
+    <div class="pt-12 border-t border-border-hairline space-y-8">
+      
+      <div class="flex items-center justify-between">
+        <a href="articles.html" class="font-mono-technical text-xs text-gray-500 uppercase tracking-widest hover:text-executive-gold transition-colors text-decoration-none">
+          ← Back to Articles Archive
+        </a>
+      </div>
+
+      <!-- Author Card -->
+      <div class="bg-white border border-border-hairline rounded-lg p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-xs">
+        <img src="assets/images/yatin-portrait.jpg" alt="Yatin Sanjeev Kanekar" class="w-20 h-20 rounded-full object-cover border border-border-hairline flex-shrink-0">
+        <div class="space-y-2 text-center sm:text-left">
+          <h3 class="font-display-lg text-2xl text-primary">Yatin Sanjeev Kanekar</h3>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-600 leading-relaxed max-w-xl">
+            Founder of Infipre IT Services, SaaS product architect, and mentor. Writing on software architecture, applied AI, and organizational scale.
+          </p>
+        </div>
+      </div>
+
+      <!-- Strategic Opportunity Callout CTA -->
+      <div class="bg-white border border-border-hairline rounded-lg p-8 text-center space-y-3">
+        <h3 class="font-display-lg text-2xl text-primary font-normal">Have a perspective or software challenge to discuss?</h3>
+        <p class="text-xs text-gray-600 max-w-md mx-auto">Let's connect on software design, executive advisory, or product partnerships.</p>
+        <a href="contact.html" class="inline-flex items-center py-2.5 px-6 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none">
+          Partner With Me →
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Master Premium Executive Footer -->
+  <footer class="bg-primary text-white py-14 px-6 border-t border-border-hairline">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        <div class="md:col-span-4 space-y-3">
+          <a href="index.html" class="inline-block mb-1">
+            <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-10 w-auto object-contain brightness-200">
+          </a>
+          <h2 class="font-display-lg text-2xl text-white font-normal leading-snug">Yatin Sanjeev Kanekar</h2>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Strategic technology leadership across custom software engineering, applied AI, enterprise platforms, and venture building.
+          </p>
+        </div>
+        <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono-technical">
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Explore</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey</a></li>
+              <li><a href="leadership.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Leadership</a></li>
+              <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Build</h3>
+            <ul class="space-y-2">
+              <li><a href="products.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products</a></li>
+              <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
+              <li><a href="articles.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles</a></li>
+              <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Connect</h3>
+            <ul class="space-y-2">
+              <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Credentials</a></li>
+              <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="font-display-lg text-lg text-white font-normal">Have a strategic opportunity in mind?</h3>
+          <p class="text-xs text-gray-400">Let's build what matters for the next decade of growth.</p>
+          <a href="contact.html" class="inline-flex items-center py-2.5 px-5 bg-executive-gold text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">
+            Partner With Me →
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 text-center space-y-4">
+        <p class="font-editorial-md text-sm sm:text-base italic text-gray-400 max-w-xl mx-auto">
+          “Clarity of purpose is the foundation of institutional longevity.”
+        </p>
+        <p class="font-mono-technical text-xs text-gray-500">
+          © 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Institutional Grade Security Enabled.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/mobile-nav.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progress = document.getElementById('reading-progress');
+      if (progress) { progress.style.width = scrolled + '%'; }
+    });
+  </script>
+</body>
+</html>

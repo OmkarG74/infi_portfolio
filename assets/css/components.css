@@ -1,0 +1,67 @@
+/* ==========================================================================
+   STITCH EXECUTIVE LIGHT COMPONENTS STYLESHEET
+   ========================================================================== */
+
+/* Navbar Sticky Glass */
+.site-navbar {
+  background-color: rgba(252, 248, 248, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-hairline);
+  z-index: 1050;
+}
+
+.navbar-brand span {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.nav-link.label-caps {
+  font-family: var(--font-sans);
+  font-size: 0.775rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--primary-charcoal) !important;
+  transition: var(--transition-fast);
+}
+
+.nav-link.label-caps:hover {
+  color: var(--accent-gold) !important;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-card);
+  padding: 12px 0;
+  margin-top: 10px;
+}
+
+.dropdown-item {
+  color: var(--text-main);
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-surface-low);
+  color: var(--accent-gold);
+}
+
+/* Footer elements */
+.footer-top-cta {
+  background-color: var(--primary-charcoal);
+}
+
+.footer-main {
+  background-color: var(--bg-surface-low);
+}
+
+.footer-bottom {
+  background-color: var(--primary-charcoal);
+}
+
+#back-to-top {
+  border-radius: var(--radius-pill);
+}

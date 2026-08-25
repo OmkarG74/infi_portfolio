@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Leadership — Board Governance &amp; Mentorship | Yatin Sanjeev Kanekar</title>
+  <meta name="description" content="Board governance, strategic advisory, and executive mentorship by Yatin Sanjeev Kanekar.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts — Stitch Executive Light Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#0c1014",
+            "executive-gold": "#B0925A",
+            "background": "#fcf8f8",
+            "border-hairline": "rgba(33, 37, 41, 0.1)",
+            "surface-low": "#f6f3f3"
+          },
+          "fontFamily": {
+            "label-caps": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display-lg": ["EB Garamond", "serif"],
+            "mono-technical": ["Geist", "monospace"],
+            "editorial-md": ["EB Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Master Fixed Executive Header (Source of Truth) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border-hairline shadow-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
+      
+      <!-- Brand Zone: ONLY YK Logo Asset -->
+      <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0">
+        <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center space-x-4 xl:space-x-5 text-[11px] font-label-caps uppercase tracking-wider whitespace-nowrap">
+        <a href="index.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">About</a>
+        <a href="journey.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Journey</a>
+        <a href="leadership.html" class="text-executive-gold font-bold py-1 border-b-2 border-executive-gold">Leadership</a>
+        <a href="ventures.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Ventures</a>
+        <a href="products.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Products</a>
+        <a href="technology.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Technology</a>
+        <a href="insights.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Insights</a>
+        <a href="articles.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Articles</a>
+        <a href="speaking.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Speaking</a>
+        <a href="contact.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Far Right Action CTA & Mobile Toggle -->
+      <div class="flex items-center space-x-3 flex-shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex items-center py-2 px-4.5 bg-primary text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none whitespace-nowrap">
+          Partner With Me
+        </a>
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-border-hairline px-6 py-6 space-y-2.5 font-label-caps uppercase text-xs">
+      <a href="index.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Home</a>
+      <a href="about.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">About</a>
+      <a href="journey.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Journey</a>
+      <a href="leadership.html" class="block py-1.5 text-executive-gold font-bold">Leadership</a>
+      <a href="ventures.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Ventures</a>
+      <a href="products.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Products</a>
+      <a href="technology.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Technology</a>
+      <a href="insights.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Insights</a>
+      <a href="articles.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Articles</a>
+      <a href="speaking.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Speaking</a>
+      <a href="contact.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Contact</a>
+      <div class="pt-4 border-t border-border-hairline">
+        <a href="contact.html" class="block w-full py-3 bg-primary text-white text-center font-semibold rounded">Partner With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow">
+    <!-- Header Section -->
+    <header class="py-16 sm:py-20 max-w-4xl mx-auto px-6 text-center border-b border-border-hairline">
+      <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-4">GOVERNANCE &amp; MENTORSHIP</span>
+      <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-6xl text-primary font-normal leading-tight mb-6">
+        Architecting the Next <br/><span class="italic font-light">Generation of Leadership</span>
+      </h1>
+      <p class="font-editorial-md text-lg sm:text-xl text-gray-600 italic max-w-3xl mx-auto">
+        Guiding institutional strategy and empowering visionary founders. A commitment to rigorous governance, ethical scale, and transformative mentorship across global boards.
+      </p>
+    </header>
+
+    <!-- Board Governance Section -->
+    <section class="py-16 max-w-6xl mx-auto px-6 border-b border-border-hairline">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div class="lg:col-span-4">
+          <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-2">CURRENT APPOINTMENTS</span>
+          <h2 class="font-display-lg text-3xl sm:text-4xl text-primary border-b border-border-hairline pb-4">Board Governance</h2>
+        </div>
+        <div class="lg:col-span-8">
+          <p class="font-editorial-md text-lg text-gray-700 leading-relaxed">
+            Strategic oversight for organizations shaping the future of technology, finance, and global policy. Focused on sustainable growth, risk mitigation, and long-term stakeholder value creation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bento Grid for Board Seats -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Board Seat 1 -->
+        <article class="bg-white border border-border-hairline rounded p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="font-mono-technical text-xs text-executive-gold font-semibold bg-executive-gold/10 px-3 py-1 rounded">Chairman</span>
+              <span class="material-symbols-outlined text-gray-400">account_balance</span>
+            </div>
+            <h3 class="font-display-lg text-2xl text-primary mb-3">Nexus Global Financial</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Leading the steering committee for digital transformation and algorithmic risk compliance across international markets.</p>
+          </div>
+          <div class="border-t border-border-hairline pt-4 mt-8 flex justify-between items-center font-mono-technical text-xs">
+            <span class="text-gray-500">Appointed 2021</span>
+            <a class="text-executive-gold font-semibold hover:underline flex items-center gap-1" href="contact.html">Details →</a>
+          </div>
+        </article>
+
+        <!-- Board Seat 2 (Featured Image Card) -->
+        <article class="md:col-span-2 bg-white border border-border-hairline rounded overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow">
+          <div class="w-full md:w-1/2 min-h-[220px]">
+            <img alt="Boardroom" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYLNhTaxGuuXgB-MqJ6ozFB-vMY4nuNH4uNmyJcLTdh4fufcew1jUS1dXSGClmsYN3-BDcGpBbs_VgiGGQYvqS-d_XAO07TTGHWRMq6e9M2i7S43ercrLv3E2w24rKh2CdjYhKB-3dSGbuCLNN7g9yHKEiWD3raO3_dlXAqeq56n0m_FgD5Rrt7j6yPZX1TdLJqTxMPMlUAoqkMMG9mu6YftlrH2eps7Gti8NzSuN3FuNcTugQQ-I"/>
+          </div>
+          <div class="w-full md:w-1/2 p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <span class="font-mono-technical text-xs text-primary font-semibold bg-surface-low px-3 py-1 rounded">Independent Director</span>
+                <span class="material-symbols-outlined text-gray-400">language</span>
+              </div>
+              <h3 class="font-display-lg text-2xl text-primary mb-3">Aether Dynamics</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">Guiding executive compensation structures and auditing technological infrastructure resilience for the premier aerospace manufacturer.</p>
+            </div>
+            <div class="border-t border-border-hairline pt-4 mt-8 flex justify-between items-center font-mono-technical text-xs">
+              <span class="text-gray-500">Appointed 2019</span>
+              <a class="text-executive-gold font-semibold hover:underline flex items-center gap-1" href="contact.html">Details →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Board Seat 3 -->
+        <article class="bg-white border border-border-hairline rounded p-8 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="font-mono-technical text-xs text-executive-gold font-semibold bg-executive-gold/10 px-3 py-1 rounded">Advisory Board</span>
+              <span class="material-symbols-outlined text-gray-400">psychology</span>
+            </div>
+            <h3 class="font-display-lg text-2xl text-primary mb-3">Quantum Research Institute</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Advising on the commercialization pipeline for advanced computational breakthroughs and quantum encryption protocols.</p>
+          </div>
+          <div class="border-t border-border-hairline pt-4 mt-8 flex justify-between items-center font-mono-technical text-xs">
+            <span class="text-gray-500">Appointed 2022</span>
+            <a class="text-executive-gold font-semibold hover:underline flex items-center gap-1" href="contact.html">Details →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Executive Mentorship Section -->
+    <section class="py-16 max-w-6xl mx-auto px-6 border-b border-border-hairline">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-5 relative">
+          <img alt="Executive Mentorship Session" class="w-full h-auto rounded border border-border-hairline shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-YL5fSTRW9_g0K9J_hXObxCFVTQ9boH0Ymuy-28OjiZeSGn7JXTR_yL9JCrDM8SuPqu6WO73Z282WfFSNsCx-hNRA85cS-09UMlWjVI05xrtB2e6h9v6i8hZ7lSPiPf1BfWtebUKN68Vj30-B8uEF-BR2NLVGUNnKeUxwiHBqgxqEZqio_xS11P_R9kOMw6t5oBtkLGnN40UwFExwZEKrIvs4EO9M8A4xgNIlBee5HMNMk0DDOZo"/>
+          <div class="mt-4 bg-white p-4 rounded border border-border-hairline shadow-xs">
+            <p class="font-display-lg text-3xl text-primary mb-0 font-semibold">15+</p>
+            <p class="font-mono-technical text-xs text-gray-500 uppercase">Unicorn Founders Mentored</p>
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-6">
+          <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block">EXECUTIVE MENTORSHIP</span>
+          <h2 class="font-display-lg text-3xl sm:text-4xl text-primary">Cultivating Visionary Leadership</h2>
+          <p class="font-editorial-md text-lg text-gray-600 italic">
+            The true measure of a leader is the legacy of leadership they leave behind. My mentorship initiatives are highly selective, focusing on founders and C-suite executives building paradigm-shifting technologies.
+          </p>
+          <div class="space-y-4 pt-2">
+            <div class="bg-white p-5 rounded border border-border-hairline">
+              <h4 class="font-display-lg text-xl text-primary mb-1">Founder's Circle Initiative</h4>
+              <p class="text-sm text-gray-600 mb-0">An invite-only quarterly retreat for Series B+ founders focusing on scaling culture and navigating complex board dynamics.</p>
+            </div>
+            <div class="bg-white p-5 rounded border border-border-hairline">
+              <h4 class="font-display-lg text-xl text-primary mb-1">Women in Deep Tech</h4>
+              <p class="text-sm text-gray-600 mb-0">Sponsorship and dedicated advisory hours for female leaders pioneering advancements in AI, robotics, and clean energy.</p>
+            </div>
+          </div>
+          <a class="inline-flex items-center py-2.5 px-6 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none" href="contact.html">
+            Inquire About Mentorship →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Governance Perspectives -->
+    <section class="py-16 max-w-6xl mx-auto px-6">
+      <div class="flex justify-between items-end mb-10">
+        <div>
+          <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-1">PUBLICATIONS</span>
+          <h2 class="font-display-lg text-3xl sm:text-4xl text-primary">Governance Perspectives</h2>
+        </div>
+        <a class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-wider hover:underline" href="articles.html">View All →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a class="group block bg-white p-6 rounded border border-border-hairline hover:shadow-md transition-shadow text-decoration-none" href="articles.html">
+          <span class="font-mono-technical text-xs text-gray-500 block mb-3">HARVARD BUSINESS REVIEW</span>
+          <h3 class="font-display-lg text-2xl text-primary group-hover:text-executive-gold transition-colors mb-3">The Algorithmic Boardroom</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-0">How directors must adapt their oversight frameworks to evaluate the ethical and operational risks of AI integration.</p>
+        </a>
+        <a class="group block bg-white p-6 rounded border border-border-hairline hover:shadow-md transition-shadow text-decoration-none" href="articles.html">
+          <span class="font-mono-technical text-xs text-gray-500 block mb-3">WORLD ECONOMIC FORUM</span>
+          <h3 class="font-display-lg text-2xl text-primary group-hover:text-executive-gold transition-colors mb-3">Beyond ESG: Sustainable Scale</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-0">Moving past compliance checklists to embed deep sustainability into core technological architecture.</p>
+        </a>
+        <a class="group block bg-white p-6 rounded border border-border-hairline hover:shadow-md transition-shadow text-decoration-none" href="articles.html">
+          <span class="font-mono-technical text-xs text-gray-500 block mb-3">STANFORD DIRECTORS' COLLEGE</span>
+          <h3 class="font-display-lg text-2xl text-primary group-hover:text-executive-gold transition-colors mb-3">The Crisis of Complexity</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-0">A framework for modern boards to decipher complex technical debt and cybersecurity vulnerabilities during M&amp;A.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Master Premium Executive Footer -->
+  <footer class="bg-primary text-white py-14 px-6 border-t border-border-hairline">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Top Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        
+        <!-- Area 1 -->
+        <div class="md:col-span-4 space-y-3">
+          <a href="index.html" class="inline-block mb-1">
+            <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-10 w-auto object-contain brightness-200">
+          </a>
+          <h2 class="font-display-lg text-2xl text-white font-normal leading-snug">Yatin Sanjeev Kanekar</h2>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Strategic technology leadership across custom software engineering, applied AI, enterprise platforms, and venture building.
+          </p>
+        </div>
+
+        <!-- Area 2 -->
+        <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono-technical">
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Explore</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey</a></li>
+              <li><a href="leadership.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Leadership</a></li>
+              <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Build</h3>
+            <ul class="space-y-2">
+              <li><a href="products.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products</a></li>
+              <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
+              <li><a href="articles.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles</a></li>
+              <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Connect</h3>
+            <ul class="space-y-2">
+              <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Credentials</a></li>
+              <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Area 3 -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="font-display-lg text-lg text-white font-normal">Have a strategic opportunity in mind?</h3>
+          <p class="text-xs text-gray-400">Let's build what matters for the next decade of growth.</p>
+          <a href="contact.html" class="inline-flex items-center py-2.5 px-5 bg-executive-gold text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">
+            Partner With Me →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Area 4 -->
+      <div class="pt-8 text-center space-y-4">
+        <p class="font-editorial-md text-sm sm:text-base italic text-gray-400 max-w-xl mx-auto">
+          “True governance is not the avoidance of risk, but the intelligent architecture of opportunity.”
+        </p>
+        <p class="font-mono-technical text-xs text-gray-500">
+          © 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Institutional Grade Security Enabled.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/mobile-nav.js"></script>
+</body>
+</html>

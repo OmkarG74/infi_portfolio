@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Work With Me — Strategic Inquiry &amp; Advisory | Yatin Sanjeev Kanekar</title>
+  <meta name="description" content="Engage for strategic advisory, board governance, and venture partnerships with Yatin Sanjeev Kanekar.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Google Fonts — Stitch Executive Light Stack -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#0c1014",
+            "executive-gold": "#B0925A",
+            "background": "#fcf8f8",
+            "border-hairline": "rgba(33, 37, 41, 0.1)",
+            "surface-low": "#f6f3f3"
+          },
+          "fontFamily": {
+            "label-caps": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "display-lg": ["EB Garamond", "serif"],
+            "mono-technical": ["Geist", "monospace"],
+            "editorial-md": ["EB Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Master Fixed Executive Header (Source of Truth) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border-hairline shadow-xs">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-[76px] flex items-center justify-between gap-4">
+      
+      <!-- Brand Zone: ONLY YK Logo Asset -->
+      <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0">
+        <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center space-x-4 xl:space-x-5 text-[11px] font-label-caps uppercase tracking-wider whitespace-nowrap">
+        <a href="index.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">About</a>
+        <a href="journey.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Journey</a>
+        <a href="leadership.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Leadership</a>
+        <a href="ventures.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Ventures</a>
+        <a href="products.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Products</a>
+        <a href="technology.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Technology</a>
+        <a href="insights.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Insights</a>
+        <a href="articles.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Articles</a>
+        <a href="speaking.html" class="text-gray-700 hover:text-executive-gold transition-colors py-1">Speaking</a>
+        <a href="contact.html" class="text-executive-gold font-bold py-1 border-b-2 border-executive-gold">Contact</a>
+      </nav>
+
+      <!-- Far Right Action CTA & Mobile Toggle -->
+      <div class="flex items-center space-x-3 flex-shrink-0">
+        <a href="contact.html" class="hidden sm:inline-flex items-center py-2 px-4.5 bg-primary text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors text-decoration-none whitespace-nowrap">
+          Partner With Me
+        </a>
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-border-hairline px-6 py-6 space-y-2.5 font-label-caps uppercase text-xs">
+      <a href="index.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Home</a>
+      <a href="about.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">About</a>
+      <a href="journey.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Journey</a>
+      <a href="leadership.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Leadership</a>
+      <a href="ventures.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Ventures</a>
+      <a href="products.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Products</a>
+      <a href="technology.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Technology</a>
+      <a href="insights.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Insights</a>
+      <a href="articles.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Articles</a>
+      <a href="speaking.html" class="block py-1.5 text-gray-700 hover:text-executive-gold">Speaking</a>
+      <a href="contact.html" class="block py-1.5 text-executive-gold font-bold">Contact</a>
+      <div class="pt-4 border-t border-border-hairline">
+        <a href="contact.html" class="block w-full py-3 bg-primary text-white text-center font-semibold rounded">Partner With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Canvas -->
+  <main class="flex-grow">
+    <!-- Header Section -->
+    <header class="py-16 sm:py-20 max-w-4xl mx-auto px-6 text-center border-b border-border-hairline">
+      <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-4">STRATEGIC ENGAGEMENT</span>
+      <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-6xl text-primary font-normal leading-tight mb-6">Work With Me</h1>
+      <p class="font-editorial-md text-lg sm:text-xl text-gray-600 italic max-w-3xl mx-auto">
+        Structuring high-leverage partnerships across strategic advisory, board governance, and venture co-creation.
+      </p>
+    </header>
+
+    <!-- Content & Intake Form -->
+    <section class="py-16 max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Left Column: Engagement Protocol -->
+        <div class="lg:col-span-5 space-y-8 pr-0 lg:pr-8 border-b lg:border-b-0 lg:border-r border-border-hairline pb-8 lg:pb-0">
+          <div>
+            <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-2">ENGAGEMENT PROTOCOL</span>
+            <h2 class="font-display-lg text-3xl text-primary mb-4">Engagement Sequence</h2>
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              To preserve executive focus and ensure maximum value creation, all potential engagements follow a structured 3-phase evaluation process.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="border-l-2 border-executive-gold pl-4 space-y-1">
+              <h4 class="font-display-lg text-lg text-primary">Phase I: Initial Inquiry</h4>
+              <p class="text-xs text-gray-600 mb-0">Submission of strategic overview and desired outcomes.</p>
+              <span class="font-mono-technical text-[10px] text-executive-gold font-semibold block">T + 0 DAYS</span>
+            </div>
+            <div class="border-l-2 border-border-hairline pl-4 space-y-1">
+              <h4 class="font-display-lg text-lg text-primary">Phase II: Mutual Alignment</h4>
+              <p class="text-xs text-gray-600 mb-0">Review by executive staff and initial exploratory dialogue.</p>
+              <span class="font-mono-technical text-[10px] text-gray-400 block">T + 3-5 DAYS</span>
+            </div>
+            <div class="border-l-2 border-border-hairline pl-4 space-y-1">
+              <h4 class="font-display-lg text-lg text-primary">Phase III: Formal Proposition</h4>
+              <p class="text-xs text-gray-600 mb-0">Structuring of engagement terms, deliverables, and governance model.</p>
+              <span class="font-mono-technical text-[10px] text-gray-400 block">T + 14 DAYS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Intake Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-white border border-border-hairline rounded-xl p-8 sm:p-10 shadow-sm">
+            <form action="#" method="POST" class="space-y-6">
+              <span class="font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-widest block mb-2">INITIATE DIALOGUE</span>
+              <h2 class="font-display-lg text-2xl text-primary mb-4">Strategic Submission Form</h2>
+
+              <!-- Engagement Archetype -->
+              <div class="space-y-2">
+                <label class="font-mono-technical text-xs text-gray-700 uppercase font-semibold block">Engagement Archetype</label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <label class="flex items-center gap-2 p-3 bg-background border border-border-hairline rounded cursor-pointer hover:border-executive-gold transition-colors">
+                    <input type="radio" name="archetype" value="advisory" checked class="text-executive-gold focus:ring-executive-gold">
+                    <span class="text-xs font-semibold text-primary">Strategic Advisory</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-3 bg-background border border-border-hairline rounded cursor-pointer hover:border-executive-gold transition-colors">
+                    <input type="radio" name="archetype" value="governance" class="text-executive-gold focus:ring-executive-gold">
+                    <span class="text-xs font-semibold text-primary">Board Governance</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-3 bg-background border border-border-hairline rounded cursor-pointer hover:border-executive-gold transition-colors">
+                    <input type="radio" name="archetype" value="venture" class="text-executive-gold focus:ring-executive-gold">
+                    <span class="text-xs font-semibold text-primary">Venture Partnership</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Executive Details -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="font-mono-technical text-xs text-gray-700 uppercase font-semibold block" for="principal_name">Principal Name</label>
+                  <input class="w-full bg-background border border-border-hairline px-4 py-3 text-sm text-primary rounded focus:outline-none focus:border-executive-gold" id="principal_name" placeholder="e.g. Jane Doe" type="text" required/>
+                </div>
+                <div class="space-y-1">
+                  <label class="font-mono-technical text-xs text-gray-700 uppercase font-semibold block" for="organization">Organization</label>
+                  <input class="w-full bg-background border border-border-hairline px-4 py-3 text-sm text-primary rounded focus:outline-none focus:border-executive-gold" id="organization" placeholder="Entity Name" type="text" required/>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="font-mono-technical text-xs text-gray-700 uppercase font-semibold block" for="email">Direct Contact (Email)</label>
+                  <input class="w-full bg-background border border-border-hairline px-4 py-3 text-sm text-primary rounded focus:outline-none focus:border-executive-gold" id="email" placeholder="corporate@domain.com" type="email" required/>
+                </div>
+                <div class="space-y-1">
+                  <label class="font-mono-technical text-xs text-gray-700 uppercase font-semibold block" for="timeline">Target Initiation</label>
+                  <select class="w-full bg-background border border-border-hairline px-4 py-3 text-sm text-primary rounded focus:outline-none focus:border-executive-gold" id="timeline">
+                    <option>Immediate (Q1)</option>
+                    <option>Mid-Term (Q2-Q3)</option>
+                    <option>Long-Term Exploratory</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Strategic Brief -->
+              <div class="space-y-1">
+                <label class="font-mono-technical text-xs text-gray-700 uppercase font-semibold block" for="brief">Strategic Brief (Abstract)</label>
+                <textarea class="w-full bg-background border border-border-hairline p-4 text-sm text-primary rounded focus:outline-none focus:border-executive-gold resize-none" id="brief" placeholder="Provide a high-level overview of the challenge, opportunity, or desired partnership structure..." rows="4" required></textarea>
+              </div>
+
+              <!-- Submit -->
+              <div class="pt-2 flex items-center justify-between border-t border-border-hairline">
+                <span class="font-mono-technical text-[10px] text-gray-400 max-w-xs">Initial non-disclosure terms apply upon submission.</span>
+                <button class="py-3 px-8 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-executive-gold transition-colors" type="submit">
+                  Submit Inquiry →
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Master Premium Executive Footer -->
+  <footer class="bg-primary text-white py-14 px-6 border-t border-border-hairline">
+    <div class="max-w-[1240px] mx-auto">
+      
+      <!-- Top Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+        
+        <!-- Area 1 -->
+        <div class="md:col-span-4 space-y-3">
+          <a href="index.html" class="inline-block mb-1">
+            <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-10 w-auto object-contain brightness-200">
+          </a>
+          <h2 class="font-display-lg text-2xl text-white font-normal leading-snug">Yatin Sanjeev Kanekar</h2>
+          <p class="font-mono-technical text-xs text-executive-gold uppercase tracking-wider">CEO & Technology Leader</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Strategic technology leadership across custom software engineering, applied AI, enterprise platforms, and venture building.
+          </p>
+        </div>
+
+        <!-- Area 2 -->
+        <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono-technical">
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Explore</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey</a></li>
+              <li><a href="leadership.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Leadership</a></li>
+              <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Build</h3>
+            <ul class="space-y-2">
+              <li><a href="products.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products</a></li>
+              <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
+              <li><a href="articles.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles</a></li>
+              <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Connect</h3>
+            <ul class="space-y-2">
+              <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Credentials</a></li>
+              <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Area 3 -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="font-display-lg text-lg text-white font-normal">Have a strategic opportunity in mind?</h3>
+          <p class="text-xs text-gray-400">Let's build what matters for the next decade of growth.</p>
+          <a href="contact.html" class="inline-flex items-center py-2.5 px-5 bg-executive-gold text-white text-[11px] font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none">
+            Partner With Me →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Area 4 -->
+      <div class="pt-8 text-center space-y-4">
+        <p class="font-editorial-md text-sm sm:text-base italic text-gray-400 max-w-xl mx-auto">
+          “Clarity of purpose is the foundation of institutional longevity.”
+        </p>
+        <p class="font-mono-technical text-xs text-gray-500">
+          © 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Institutional Grade Security Enabled.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/mobile-nav.js"></script>
+</body>
+</html>
