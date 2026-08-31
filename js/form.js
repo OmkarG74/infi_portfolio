@@ -1,50 +1,66 @@
 /* ==========================================================================
-   CONTACT FORM JS — YATIN SANJEEV KANEKAR PORTFOLIO
+   HUMANIZED EXECUTIVE FORM HANDLER — YATIN SANJEEV KANEKAR PORTFOLIO
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.getElementById('contactForm');
-  const formSuccessAlert = document.getElementById('formSuccessAlert');
+  const formsToHandle = [
+    { formId: 'contactForm', alertId: 'formSuccessAlert', defaultBtnText: 'Send Message →' },
+    { formId: 'workWithMeForm', alertId: 'workWithMeSuccessAlert', defaultBtnText: 'Submit Inquiry →' }
+  ];
 
-  if (!contactForm) return;
+  formsToHandle.forEach(({ formId, alertId, defaultBtnText }) => {
+    const form = document.getElementById(formId);
+    const successAlert = document.getElementById(alertId);
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    if (!form) return;
 
-    let isValid = true;
-    const requiredInputs = contactForm.querySelectorAll('[required]');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    requiredInputs.forEach(input => {
-      if (!input.value.trim()) {
-        isValid = false;
-        input.classList.add('is-invalid');
-      } else {
-        input.classList.remove('is-invalid');
-        input.classList.add('is-valid');
+      let isValid = true;
+      const requiredInputs = form.querySelectorAll('[required]');
+
+      requiredInputs.forEach(input => {
+        const val = input.value.trim();
+        if (!val) {
+          isValid = false;
+          input.classList.add('border-red-500');
+          input.classList.remove('border-border-hairline', 'border-emerald-500');
+        } else {
+          if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            isValid = false;
+            input.classList.add('border-red-500');
+            input.classList.remove('border-border-hairline', 'border-emerald-500');
+          } else {
+            input.classList.remove('border-red-500');
+            input.classList.add('border-emerald-500');
+          }
+        }
+      });
+
+      if (isValid) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⟳</span> Submitting...';
+        }
+
+        setTimeout(() => {
+          form.reset();
+          requiredInputs.forEach(input => {
+            input.classList.remove('border-emerald-500', 'border-red-500');
+            input.classList.add('border-border-hairline');
+          });
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = defaultBtnText;
+          }
+          if (successAlert) {
+            successAlert.classList.remove('hidden');
+            successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }, 1000);
       }
     });
-
-    if (isValid) {
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Sending...';
-      }
-
-      setTimeout(() => {
-        contactForm.reset();
-        requiredInputs.forEach(input => {
-          input.classList.remove('is-valid');
-        });
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = 'Send Message <i class="bi bi-send ms-2"></i>';
-        }
-        if (formSuccessAlert) {
-          formSuccessAlert.classList.remove('d-none');
-          formSuccessAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      }, 1200);
-    }
   });
 });

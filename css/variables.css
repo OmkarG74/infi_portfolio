@@ -1,43 +1,42 @@
 /* ==========================================================================
-   DESIGN TOKENS & VARIABLES — STITCH EXECUTIVE LIGHT SYSTEM (PRIMARY SOURCE)
+   EXECUTIVE DESIGN TOKENS — YATIN SANJEEV KANEKAR PORTFOLIO
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
-
 :root {
-  /* Executive Palette (Index Canonical Source) */
-  --color-primary: #0c1014;
-  --color-executive-gold: #B0925A;
-  --color-background: #fcf8f8;
-  --color-border-hairline: rgba(33, 37, 41, 0.1);
-  --color-surface-low: #f6f3f3;
-  --color-surface-white: #ffffff;
+  /* Colors */
+  --color-primary: #0c1014;         /* Obsidian / Deep Dark Navy */
+  --color-primary-light: #161e27;   /* Slate Executive Surface */
+  --color-executive-gold: #B0925A;  /* Muted Premium Gold */
+  --color-gold-accent: #C4A974;     /* Secondary Warm Gold Accent */
+  --color-background: #fcfaf7;     /* Warm Off-White Canvas */
+  --color-surface: #ffffff;        /* Pure White Card Surface */
+  --color-surface-low: #f6f3f0;    /* Subtle Warm Gray */
+  --color-border-hairline: rgba(33, 37, 41, 0.08);
+  --color-border-gold: rgba(176, 146, 90, 0.25);
+  
+  --text-primary: #0c1014;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --text-light: #a0aec0;
 
-  /* Typography Tokens */
-  --font-serif: 'EB Garamond', Georgia, serif;
-  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Geist', monospace;
+  /* Typography Stacks */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-  /* Text Colors */
-  --text-main: #0c1014;
-  --text-body: #334155;
-  --text-muted: #64748b;
-  --text-gold: #B0925A;
+  /* Spacing & Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
 
-  /* Layout Scale */
-  --max-width-container: 1240px;
-  --header-height: 76px;
-
-  /* Radii & Shadows */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 2px 8px rgba(12, 16, 20, 0.04);
-  --shadow-md: 0 8px 24px rgba(12, 16, 20, 0.08);
+  /* Shadows & Glows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-gold: 0 4px 25px rgba(176, 146, 90, 0.2);
 
   /* Transitions */
-  --transition-fast: 0.15s ease-in-out;
-  --transition-smooth: 0.3s ease-in-out;
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
