@@ -31,27 +31,24 @@
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN & Config -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
   <script id="tailwind-config">
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
-          "colors": {
-            "primary": "#0c1014",
-            "primary-light": "#161e27",
-            "executive-gold": "#B0925A",
-            "gold-accent": "#C4A974",
-            "background": "#fcfaf7",
-            "border-hairline": "rgba(33, 37, 41, 0.08)",
-            "surface-low": "#f6f3f0"
+          colors: {
+            primary: '#0c1014',
+            'primary-light': '#161c24',
+            'executive-gold': '#B0925A',
+            'surface-low': '#f8f6f2',
+            'border-hairline': '#e8e4dc',
+            background: '#fcfaf7'
           },
-          "fontFamily": {
-            "sans": ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-            "display": ["Plus Jakarta Sans", "Inter", "sans-serif"],
-            "mono": ["JetBrains Mono", "monospace"]
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            display: ['Plus Jakarta Sans', 'sans-serif']
           }
         }
       }
@@ -59,180 +56,28 @@
   </script>
 </head>
 <body class="bg-background text-primary font-sans antialiased min-h-screen flex flex-col justify-between">
-
-  <!-- Master Fixed Executive Header (5-Tab Sitemap Standard) -->
+  <!-- Master Fixed Executive Header -->
   <header class="sticky top-0 z-50 bg-white/98 backdrop-blur-md border-b border-border-hairline shadow-xs">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      
-      <!-- Left: Refined YK Logo Asset (36-40px height) -->
       <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0 mr-4 sm:mr-8" aria-label="Home">
         <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
       </a>
-      
-      <!-- Center: Desktop Navigation Links (Spacious & Balanced 5 Primary Tabs) -->
       <nav class="hidden lg:flex items-center space-x-7 xl:space-x-10 text-[11px] font-mono uppercase tracking-widest whitespace-nowrap">
-        
-        <!-- 1. HOME -->
         <a href="index.html" class="py-1 text-gray-800 hover:text-executive-gold font-medium transition-colors">Home</a>
-
-        <!-- 2. ABOUT YATIN (Dropdown) -->
-        <div class="relative group dropdown-container">
-          <button class="nav-dropdown-btn flex items-center gap-1 py-1 text-gray-800 hover:text-executive-gold group-hover:text-executive-gold font-medium transition-colors focus:outline-none">
-            <span>About Yatin</span>
-            <span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
-          </button>
-          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-56 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
-            <div class="bg-white rounded-xl shadow-2xl border border-border-hairline p-1.5 space-y-0.5">
-              <a href="about.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">person</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">About Yatin</span>
-              </a>
-              <a href="journey.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">timeline</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Journey & Milestones</span>
-              </a>
-              <a href="awards.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">workspace_premium</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Awards & Recognition</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. VENTURES (Dropdown) -->
-        <div class="relative group dropdown-container">
-          <button class="nav-dropdown-btn flex items-center gap-1 py-1 text-gray-800 hover:text-executive-gold group-hover:text-executive-gold font-medium transition-colors focus:outline-none">
-            <span>Ventures</span>
-            <span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
-          </button>
-          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-52 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
-            <div class="bg-white rounded-xl shadow-2xl border border-border-hairline p-1.5 space-y-0.5">
-              <a href="ventures.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">domain</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">All Ventures</span>
-              </a>
-              <a href="venture-details.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">layers</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Venture Details</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. TECHNOLOGY (Dropdown) -->
-        <div class="relative group dropdown-container">
-          <button class="nav-dropdown-btn flex items-center gap-1 py-1 text-gray-800 hover:text-executive-gold group-hover:text-executive-gold font-medium transition-colors focus:outline-none">
-            <span>Technology</span>
-            <span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
-          </button>
-          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-64 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
-            <div class="bg-white rounded-xl shadow-2xl border border-border-hairline p-1.5 space-y-0.5">
-              <a href="technology.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">memory</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Technology & Innovation</span>
-              </a>
-              <a href="speaking.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">campaign</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Speaking & Industry Engagement</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. INSIGHTS (Dropdown) -->
-        <div class="relative group dropdown-container">
-          <button class="nav-dropdown-btn flex items-center gap-1 py-1 text-gray-800 hover:text-executive-gold group-hover:text-executive-gold font-medium transition-colors focus:outline-none">
-            <span>Insights</span>
-            <span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
-          </button>
-          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-52 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
-            <div class="bg-white rounded-xl shadow-2xl border border-border-hairline p-1.5 space-y-0.5">
-              <a href="insights.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">article</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Insights</span>
-              </a>
-              <a href="media-gallery.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">photo_library</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Media & Gallery</span>
-              </a>
-              <a href="social-impact.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">volunteer_activism</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Social Impact</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
+        <a href="about.html" class="py-1 text-gray-800 hover:text-executive-gold font-medium transition-colors">About Yatin</a>
+        <a href="ventures.html" class="py-1 text-gray-800 hover:text-executive-gold font-medium transition-colors">Ventures</a>
+        <a href="technology.html" class="py-1 text-gray-800 hover:text-executive-gold font-medium transition-colors">Technology</a>
+        <a href="insights.html" class="py-1 text-gray-800 hover:text-executive-gold font-medium transition-colors">Insights</a>
       </nav>
-
-      <!-- Right: WORK WITH ME CTA & Mobile Toggle -->
       <div class="flex items-center space-x-2 flex-shrink-0 ml-4 sm:ml-8">
         <a href="work-with-me.html" class="partner-cta-btn hidden sm:inline-flex items-center gap-1.5 py-2 px-4 bg-gradient-to-r from-[#0c1014] to-[#1a222d] text-white text-[10px] font-semibold uppercase tracking-wider rounded-md border border-[#B0925A]/60 shadow-xs hover:border-[#B0925A] hover:shadow-sm transition-all duration-200 text-decoration-none group">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Work With Me</span>
           <span class="material-symbols-outlined text-[13px] text-executive-gold group-hover:translate-x-0.5 transition-transform duration-200">arrow_forward</span>
         </a>
-        <button id="mobile-menu-toggle" class="lg:hidden p-1.5 text-primary hover:text-executive-gold focus:outline-none" aria-label="Toggle Navigation">
-          <span class="material-symbols-outlined text-2xl">menu</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-border-hairline px-5 py-4 space-y-3 font-mono uppercase text-xs shadow-lg max-h-[85vh] overflow-y-auto">
-      <div class="space-y-1">
-        <a href="index.html" class="flex items-center justify-between py-1.5 text-gray-800 hover:text-executive-gold font-bold border-b border-gray-100 text-decoration-none">
-          <span>Home</span>
-          <span class="material-symbols-outlined text-[16px]">arrow_right</span>
-        </a>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[10px] font-bold text-executive-gold tracking-widest uppercase">About Yatin</div>
-        <div class="pl-2 space-y-1 border-l-2 border-executive-gold/30">
-          <a href="about.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">About Yatin</a>
-          <a href="journey.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Journey & Milestones</a>
-          <a href="awards.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Awards & Recognition</a>
-        </div>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[10px] font-bold text-executive-gold tracking-widest uppercase">Ventures</div>
-        <div class="pl-2 space-y-1 border-l-2 border-executive-gold/30">
-          <a href="ventures.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">All Ventures</a>
-          <a href="venture-details.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Venture Details</a>
-        </div>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[10px] font-bold text-executive-gold tracking-widest uppercase">Technology</div>
-        <div class="pl-2 space-y-1 border-l-2 border-executive-gold/30">
-          <a href="technology.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Technology & Innovation</a>
-          <a href="speaking.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Speaking & Industry Engagement</a>
-        </div>
-      </div>
-      <div class="space-y-1">
-        <div class="text-[10px] font-bold text-executive-gold tracking-widest uppercase">Insights</div>
-        <div class="pl-2 space-y-1 border-l-2 border-executive-gold/30">
-          <a href="insights.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Insights</a>
-          <a href="media-gallery.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Media & Gallery</a>
-          <a href="social-impact.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Social Impact</a>
-        </div>
-      </div>
-      <div class="space-y-1 pt-1 border-t border-gray-100">
-        <a href="contact.html" class="flex items-center justify-between py-1.5 text-gray-800 hover:text-executive-gold font-bold text-decoration-none">
-          <span>Contact</span>
-          <span class="material-symbols-outlined text-[16px]">arrow_right</span>
-        </a>
-      </div>
-      <div class="pt-2">
-        <a href="work-with-me.html" class="flex items-center justify-center gap-1.5 w-full py-2.5 bg-gradient-to-r from-[#0c1014] to-[#1a222d] text-white text-center font-semibold rounded-md border border-[#B0925A]/60 shadow-md text-decoration-none text-xs">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span>Work With Me</span>
-          <span class="material-symbols-outlined text-[13px] text-executive-gold">arrow_forward</span>
-        </a>
       </div>
     </div>
   </header>
-
-  
 
   <main class="flex-grow flex items-center justify-center py-20 px-6">
     <div class="max-w-xl mx-auto text-center space-y-6">
@@ -257,11 +102,11 @@
 
   <footer class="bg-primary text-white py-12 px-6 border-t border-border-hairline shadow-2xl">
     <div class="max-w-[1280px] mx-auto text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
-      <p>© 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Infipre IT Services OPC Pvt Ltd.</p>
+      <p>© 2026 Yatin Sanjeev Kanekar. All Rights Reserved. www.yatinsanjeevkanekar.in</p>
       <div class="flex items-center gap-4">
         <a href="privacy-terms.html" class="hover:text-executive-gold transition-colors text-decoration-none">Privacy Policy & Terms</a>
         <span>·</span>
-        <span>Institutional Security Enabled</span>
+        <span>Sanquelim, Goa, India</span>
       </div>
     </div>
   </footer>

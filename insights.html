@@ -77,105 +77,75 @@
 }
   </script>
 
-  
-  
-  
-  
-  
-
-  <!-- Open Graph / Social Sharing -->
-  
-  
-  
-  
-  
-  
-
-  <!-- Twitter / X Cards -->
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  <!-- Open Graph / Social Sharing -->
-  
-  
-  
-  
-  
-  
-
-  <!-- Twitter / X Cards -->
-  
-  
-  
-  
-  
-  
-  
-
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   
   
   
+  
+  
 
-  <!-- Google Fonts — Modern Professional Executive Stack -->
+  <!-- Google Fonts & Material Symbols -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <!-- Open Graph / Social Sharing -->
+  
+  
+  
+  
+  
+  
+
+  <!-- Twitter / X Cards -->
+  
+  
+  
+  
+
+  
 
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN & Config -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
   <script id="tailwind-config">
     tailwind.config = {
-      darkMode: "class",
       theme: {
         extend: {
-          "colors": {
-            "primary": "#0c1014",
-            "primary-light": "#161e27",
-            "executive-gold": "#B0925A",
-            "gold-accent": "#C4A974",
-            "background": "#fcfaf7",
-            "border-hairline": "rgba(33, 37, 41, 0.08)",
-            "surface-low": "#f6f3f0"
+          colors: {
+            primary: '#0c1014',
+            'primary-light': '#161c24',
+            'executive-gold': '#B0925A',
+            'surface-low': '#f8f6f2',
+            'border-hairline': '#e8e4dc',
+            background: '#fcfaf7'
           },
-          "fontFamily": {
-            "sans": ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-            "display": ["Plus Jakarta Sans", "Inter", "sans-serif"],
-            "mono": ["JetBrains Mono", "monospace"]
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            display: ['Plus Jakarta Sans', 'sans-serif']
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+<body class="bg-background text-primary font-sans antialiased min-h-screen flex flex-col justify-between">
 
-  <!-- Master Fixed Executive Header (5-Tab Sitemap Standard) -->
+  <!-- Master Fixed Executive Header (15-Page Reference Standard) -->
   <header class="sticky top-0 z-50 bg-white/98 backdrop-blur-md border-b border-border-hairline shadow-xs">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
-      <!-- Left: Refined YK Logo Asset (36-40px height) -->
+      <!-- Left: YK Logo -->
       <a href="index.html" class="flex items-center text-decoration-none flex-shrink-0 mr-4 sm:mr-8" aria-label="Home">
         <img src="assets/images/yk-logo.png" alt="YK Logo" class="h-9 sm:h-10 w-auto object-contain">
       </a>
       
-      <!-- Center: Desktop Navigation Links (Spacious & Balanced 5 Primary Tabs) -->
+      <!-- Center: 5 Primary Tabs -->
       <nav class="hidden lg:flex items-center space-x-7 xl:space-x-10 text-[11px] font-mono uppercase tracking-widest whitespace-nowrap">
         
         <!-- 1. HOME -->
@@ -187,7 +157,7 @@
             <span>About Yatin</span>
             <span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
           </button>
-          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-56 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
+          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-60 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
             <div class="bg-white rounded-xl shadow-2xl border border-border-hairline p-1.5 space-y-0.5">
               <a href="about.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
                 <span class="material-symbols-outlined text-executive-gold text-[16px]">person</span>
@@ -195,11 +165,15 @@
               </a>
               <a href="journey.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
                 <span class="material-symbols-outlined text-executive-gold text-[16px]">timeline</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Journey & Milestones</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">My Journey</span>
+              </a>
+              <a href="leadership-philosophy.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
+                <span class="material-symbols-outlined text-executive-gold text-[16px]">psychology</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Leadership & Philosophy</span>
               </a>
               <a href="awards.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
                 <span class="material-symbols-outlined text-executive-gold text-[16px]">workspace_premium</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Awards & Recognition</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Awards, Recognition & Credentials</span>
               </a>
             </div>
           </div>
@@ -211,15 +185,15 @@
             <span>Ventures</span>
             <span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
           </button>
-          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-52 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
+          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-56 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
             <div class="bg-white rounded-xl shadow-2xl border border-border-hairline p-1.5 space-y-0.5">
               <a href="ventures.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
                 <span class="material-symbols-outlined text-executive-gold text-[16px]">domain</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">All Ventures</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Entrepreneurship & Ventures</span>
               </a>
-              <a href="venture-details.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
+              <a href="products-solutions.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
                 <span class="material-symbols-outlined text-executive-gold text-[16px]">layers</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Venture Details</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Products & Solutions</span>
               </a>
             </div>
           </div>
@@ -251,19 +225,23 @@
             <span>Insights</span>
             <span class="material-symbols-outlined text-[14px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
           </button>
-          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-52 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
+          <div class="dropdown-menu absolute left-0 top-full pt-1.5 w-60 opacity-0 translate-y-1 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 z-50">
             <div class="bg-white rounded-xl shadow-2xl border border-border-hairline p-1.5 space-y-0.5">
+              <a href="thought-leadership.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
+                <span class="material-symbols-outlined text-executive-gold text-[16px]">lightbulb</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Thought Leadership</span>
+              </a>
               <a href="insights.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
                 <span class="material-symbols-outlined text-executive-gold text-[16px]">article</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Insights</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Articles & Insights</span>
+              </a>
+              <a href="social-impact.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
+                <span class="material-symbols-outlined text-executive-gold text-[16px]">volunteer_activism</span>
+                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Social Impact & Education</span>
               </a>
               <a href="media-gallery.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
                 <span class="material-symbols-outlined text-executive-gold text-[16px]">photo_library</span>
                 <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Media & Gallery</span>
-              </a>
-              <a href="social-impact.html" class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-surface-low transition-colors group/item text-decoration-none">
-                <span class="material-symbols-outlined text-executive-gold text-[16px]">volunteer_activism</span>
-                <span class="text-[11px] font-bold text-primary normal-case group-hover/item:text-executive-gold transition-colors">Social Impact</span>
               </a>
             </div>
           </div>
@@ -271,7 +249,7 @@
 
       </nav>
 
-      <!-- Right: WORK WITH ME CTA & Mobile Toggle -->
+      <!-- Right: WORK WITH ME CTA -->
       <div class="flex items-center space-x-2 flex-shrink-0 ml-4 sm:ml-8">
         <a href="work-with-me.html" class="partner-cta-btn hidden sm:inline-flex items-center gap-1.5 py-2 px-4 bg-gradient-to-r from-[#0c1014] to-[#1a222d] text-white text-[10px] font-semibold uppercase tracking-wider rounded-md border border-[#B0925A]/60 shadow-xs hover:border-[#B0925A] hover:shadow-sm transition-all duration-200 text-decoration-none group">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -284,10 +262,10 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
+    <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-border-hairline px-5 py-4 space-y-3 font-mono uppercase text-xs shadow-lg max-h-[85vh] overflow-y-auto">
       <div class="space-y-1">
-        <a href="index.html" class="flex items-center justify-between py-1.5 text-gray-800 hover:text-executive-gold font-bold border-b border-gray-100 text-decoration-none">
+        <a href="index.html" class="flex items-center justify-between py-1.5 text-gray-800 hover:text-executive-gold font-bold text-decoration-none">
           <span>Home</span>
           <span class="material-symbols-outlined text-[16px]">arrow_right</span>
         </a>
@@ -296,15 +274,16 @@
         <div class="text-[10px] font-bold text-executive-gold tracking-widest uppercase">About Yatin</div>
         <div class="pl-2 space-y-1 border-l-2 border-executive-gold/30">
           <a href="about.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">About Yatin</a>
-          <a href="journey.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Journey & Milestones</a>
-          <a href="awards.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Awards & Recognition</a>
+          <a href="journey.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">My Journey</a>
+          <a href="leadership-philosophy.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Leadership & Philosophy</a>
+          <a href="awards.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Awards, Recognition & Credentials</a>
         </div>
       </div>
       <div class="space-y-1">
         <div class="text-[10px] font-bold text-executive-gold tracking-widest uppercase">Ventures</div>
         <div class="pl-2 space-y-1 border-l-2 border-executive-gold/30">
-          <a href="ventures.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">All Ventures</a>
-          <a href="venture-details.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Venture Details</a>
+          <a href="ventures.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Entrepreneurship & Ventures</a>
+          <a href="products-solutions.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Products & Solutions</a>
         </div>
       </div>
       <div class="space-y-1">
@@ -317,9 +296,10 @@
       <div class="space-y-1">
         <div class="text-[10px] font-bold text-executive-gold tracking-widest uppercase">Insights</div>
         <div class="pl-2 space-y-1 border-l-2 border-executive-gold/30">
-          <a href="insights.html" class="block py-1 text-executive-gold font-bold text-decoration-none">Insights</a>
+          <a href="thought-leadership.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Thought Leadership</a>
+          <a href="insights.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Articles & Insights</a>
+          <a href="social-impact.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Social Impact & Education</a>
           <a href="media-gallery.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Media & Gallery</a>
-          <a href="social-impact.html" class="block py-1 text-gray-700 hover:text-executive-gold text-decoration-none">Social Impact</a>
         </div>
       </div>
       <div class="space-y-1 pt-1 border-t border-gray-100">
@@ -339,140 +319,255 @@
   </header>
 
 
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-  
-
-
-      
-
-  <!-- Main Content Canvas -->
-  <main class="flex-grow py-12 sm:py-16">
-
+  <main class="flex-grow">
     <!-- Hero Section -->
     <section class="hero-split-dark py-16 sm:py-20 px-6 border-b border-border-hairline text-center">
       <div class="max-w-4xl mx-auto space-y-4">
-        <span class="font-mono text-xs text-executive-gold font-bold uppercase tracking-widest block">TECHNICAL ESSAYS & RESEARCH</span>
+        <span class="font-mono text-xs text-executive-gold font-bold uppercase tracking-widest block">ORIGINAL ESSAYS & PUBLICATIONS</span>
         <h1 class="font-display text-4xl sm:text-5xl text-white font-extrabold leading-tight">
           Insights & Research Essays
         </h1>
         <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-          Perspectives on software architecture, agentic AI, QA engineering, and leadership.
+          Official articles, research essays, and leadership reflections by Yatin Sanjeev Kanekar on software architecture, agentic AI, cultural wisdom, and entrepreneurial resilience.
         </p>
       </div>
     </section>
-    <div class="max-w-4xl mx-auto px-6">
-      
-      <!-- Header Section -->
-        
 
-      <!-- Hero Article Container -->
-      <article class="bg-white border border-border-hairline rounded-xl shadow-sm overflow-hidden mb-12">
-        <!-- Hero Image -->
-        <div class="w-full h-64 sm:h-96 overflow-hidden border-b border-border-hairline">
-          <img alt="Architectural Structure" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuYak2eTF5GVJOksZkS49rBHZ9tI-IihRAwLOAGNt_DB7bvXyIJ8C5UwSQBZEjUUZu_ialajgT9Ot3Igk7q8fG-_JfXqMevHf0_A104a2TruFWMdmPV5Yw5ezb4Q3QqTFeD0yK-9i1RAMgAoDYa6kCjGZ0QnoR5FwGRQKQAViwegtor8muyqGrET5QNCN7naAP-UwZkUtXPzemf06gK0cHEDQ6-S7KhtY2M6OcYoyYA0qQTGeVboc"/>
-        </div>
-
-        <!-- Article Body Grid -->
-        <div class="p-6 sm:p-10 lg:p-12">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-            
-            <!-- Left Marginalia / Key Info -->
-            <div class="md:col-span-4 space-y-6 border-b md:border-b-0 md:border-r border-border-hairline pb-6 md:pb-0 md:pr-6">
-              <div>
-                <span class="font-mono-technical text-[10px] text-executive-gold font-semibold uppercase tracking-widest block mb-1">KEY CONCEPT</span>
-                <p class="font-display-lg text-lg text-primary">Structural Rigor</p>
-              </div>
-              
-              <div>
-                <span class="font-mono-technical text-[10px] text-executive-gold font-semibold uppercase tracking-widest block mb-1">AUTHOR</span>
-                <p class="font-display-lg text-lg text-primary">Yatin Sanjeev Kanekar</p>
-                <p class="text-xs text-gray-500 font-mono-technical">CEO &amp; Technology Leader</p>
-              </div>
-
-              <div class="pt-4 border-t border-border-hairline">
-                <a href="insights.html" class="inline-flex items-center gap-2 font-mono-technical text-xs text-executive-gold font-semibold uppercase tracking-wider hover:underline">
-                  ← Back to All Articles
-                </a>
-              </div>
+    <!-- Featured Spotlight Article -->
+    <section class="py-12 border-b border-border-hairline bg-white">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="bg-primary text-white rounded-2xl p-8 sm:p-12 border border-border-hairline relative overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1 bg-executive-gold/20 text-executive-gold rounded-full text-xs font-mono font-bold tracking-wider uppercase">
+                <span class="w-2 h-2 rounded-full bg-executive-gold animate-pulse"></span>
+                FEATURED ESSAY
+              </span>
+              <span class="font-mono text-xs text-gray-400">27 April 2026</span>
             </div>
-
-            <!-- Main Text Content -->
-            <div class="md:col-span-8 space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
-              <p class="font-editorial-md text-xl sm:text-2xl text-primary leading-snug font-normal italic border-l-2 border-executive-gold pl-4">
-                The foundation of any enduring software enterprise is not merely its code, but the architectural philosophy underpinning its construction. We are moving beyond the era of rapid, disposable iteration into an epoch demanding structural permanence.
-              </p>
-
-              <p>
-                Consider the parallels between physical architecture and digital engineering. A skyscraper is not built by haphazardly stacking glass and steel; it requires rigorous planning, material science, and a deep understanding of load-bearing dynamics. Similarly, modern SaaS platforms require a robust conceptual scaffolding before a single line of execution logic is laid down.
-              </p>
-
-              <p>
-                The prevailing narrative often celebrates "moving fast and breaking things." However, at institutional scale, breaking things is an unacceptable operational risk. The mandate now is to build slowly, with immense deliberate intent, ensuring that the resulting structures can withstand the compounding complexities of global scale.
-              </p>
-
-              <!-- Pullquote -->
-              <blockquote class="my-8 bg-surface-low border border-border-hairline p-6 rounded-lg text-center">
-                <p class="font-editorial-md text-lg sm:text-xl text-primary italic mb-0">
-                  “True innovation in the next decade will not come from speed, but from an uncompromising adherence to structural rigor and design elegance.”
-                </p>
-              </blockquote>
-
-              <h2 class="font-display-lg text-2xl text-primary font-normal pt-4">The Principle of Intentional Constraint</h2>
-
-              <p>
-                Constraints are often viewed as limitations, yet they are the very mechanism that forces elegant solutions. By establishing strict boundaries—whether they be latency budgets, dependency rules, or UI paradigms—we create a crucible in which chaotic possibilities are refined into focused capabilities.
-              </p>
-
-              <p>
-                When software system components adhere to predictable, self-documenting contracts, maintenance overhead drops exponentially while security posture hardens naturally. Institutional clarity is the direct product of structural restraint.
-              </p>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white leading-snug">
+              Why Being a Father Changed the Way I Design Software
+            </h2>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Personal reflection by Yatin Sanjeev Kanekar connecting patience, long-term stewardship, and structural resilience in software design.
+            </p>
+            <div class="pt-2">
+              <a href="article-fatherhood-software-design.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-executive-gold text-primary font-bold text-xs uppercase tracking-wider rounded-md hover:bg-white transition-colors">
+                <span>Read Full Essay</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
             </div>
-
+          </div>
+          <div class="lg:col-span-4 flex justify-center">
+            <img src="assets/images/article-1.png" alt="Featured Article" class="w-full max-w-xs h-auto object-contain rounded-xl border border-white/10 shadow-md">
           </div>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- Bottom Article Navigation & CTA -->
-      <div class="bg-primary text-white p-8 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div class="space-y-1 text-center sm:text-left">
-          <h3 class="font-display-lg text-xl text-white">Explore Strategic Publications</h3>
-          <p class="text-xs text-gray-400">Discover additional essays on tech leadership, AI workflows, and system design.</p>
+    <!-- Article Archive Section -->
+    <section class="py-16 max-w-[1280px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-border-hairline pb-6 gap-4">
+        <div>
+          <span class="font-mono text-xs text-executive-gold font-bold uppercase tracking-widest block mb-1">AUTHORITATIVE COLLECTION</span>
+          <h2 class="font-display text-3xl font-bold text-primary">Original 7 Articles</h2>
         </div>
-        <a href="insights.html" class="py-2.5 px-6 bg-executive-gold text-white text-xs font-semibold uppercase tracking-wider rounded hover:bg-white hover:text-primary transition-colors text-decoration-none whitespace-nowrap">
-          View Articles Archive →
-        </a>
+        <p class="text-xs text-gray-500 font-mono">Migrated from Authoritative Portfolio Source</p>
       </div>
 
-    </div>
+      <!-- 3-Column Responsive Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Article Card: Why Being a Father Changed the Way I Design Software -->
+        <article class="bg-white border border-border-hairline rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-lg border border-border-hairline aspect-video bg-surface-low flex items-center justify-center">
+              <img src="assets/images/article-1.png" alt="Why Being a Father Changed the Way I Design Software" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-executive-gold font-bold uppercase tracking-wider">EXECUTIVE REFLECTION</span>
+              <span class="text-gray-400">27 April 2026</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary group-hover:text-executive-gold transition-colors leading-snug">
+              Why Being a Father Changed the Way I Design Software
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Personal reflection by Yatin Sanjeev Kanekar connecting patience, long-term stewardship, and structural resilience in software design.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-border-hairline/60 mt-6 flex items-center justify-between">
+            <span class="font-mono text-[11px] text-gray-400">Read Time: ~5 mins</span>
+            <a href="article-fatherhood-software-design.html" class="inline-flex items-center gap-1 text-xs font-mono font-bold text-executive-gold hover:underline">
+              <span>Read Article</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article Card: We Built Better Lives… But Are We Living Them? -->
+        <article class="bg-white border border-border-hairline rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-lg border border-border-hairline aspect-video bg-surface-low flex items-center justify-center">
+              <img src="assets/images/article-2.png" alt="We Built Better Lives… But Are We Living Them?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-executive-gold font-bold uppercase tracking-wider">SOCIAL & TECHNICAL VISION</span>
+              <span class="text-gray-400">27 April 2026</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary group-hover:text-executive-gold transition-colors leading-snug">
+              We Built Better Lives… But Are We Living Them?
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Philosophical piece by Yatin Sanjeev Kanekar on leveraging software engineering to generate sustainable community impact and regional talent growth.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-border-hairline/60 mt-6 flex items-center justify-between">
+            <span class="font-mono text-[11px] text-gray-400">Read Time: ~5 mins</span>
+            <a href="article-we-built-better-lives.html" class="inline-flex items-center gap-1 text-xs font-mono font-bold text-executive-gold hover:underline">
+              <span>Read Article</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article Card: The Day a Warehouse Worker Changed Our Entire System Design -->
+        <article class="bg-white border border-border-hairline rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-lg border border-border-hairline aspect-video bg-surface-low flex items-center justify-center">
+              <img src="assets/images/article-3.png" alt="The Day a Warehouse Worker Changed Our Entire System Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-executive-gold font-bold uppercase tracking-wider">FIELD LESSONS & ERP DESIGN</span>
+              <span class="text-gray-400">25 March 2026</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary group-hover:text-executive-gold transition-colors leading-snug">
+              The Day a Warehouse Worker Changed Our Entire System Design
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Field insights by Yatin Sanjeev Kanekar on designing practical, ergonomic ERP software based on ground-level operational workflows in warehouse logistics.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-border-hairline/60 mt-6 flex items-center justify-between">
+            <span class="font-mono text-[11px] text-gray-400">Read Time: ~5 mins</span>
+            <a href="article-warehouse-worker-system-design.html" class="inline-flex items-center gap-1 text-xs font-mono font-bold text-executive-gold hover:underline">
+              <span>Read Article</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article Card: In the Age of AI and Cloud, Discipline—not Technology—Decides Who Wins -->
+        <article class="bg-white border border-border-hairline rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-lg border border-border-hairline aspect-video bg-surface-low flex items-center justify-center">
+              <img src="assets/images/ai-graphic.png" alt="In the Age of AI and Cloud, Discipline—not Technology—Decides Who Wins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-executive-gold font-bold uppercase tracking-wider">CLOUD ARCHITECTURE & DISCIPLINE</span>
+              <span class="text-gray-400">01 January 2026</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary group-hover:text-executive-gold transition-colors leading-snug">
+              In the Age of AI and Cloud, Discipline—not Technology—Decides Who Wins
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Analytical perspective by Yatin Sanjeev Kanekar on cloud-native infrastructure, engineering discipline, and scalable enterprise architecture.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-border-hairline/60 mt-6 flex items-center justify-between">
+            <span class="font-mono text-[11px] text-gray-400">Read Time: ~5 mins</span>
+            <a href="article-age-of-ai-and-cloud.html" class="inline-flex items-center gap-1 text-xs font-mono font-bold text-executive-gold hover:underline">
+              <span>Read Article</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article Card: Unfinished Yet Unbroken -->
+        <article class="bg-white border border-border-hairline rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-lg border border-border-hairline aspect-video bg-surface-low flex items-center justify-center">
+              <img src="assets/images/evolution-landscape.png" alt="Unfinished Yet Unbroken" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-executive-gold font-bold uppercase tracking-wider">ENTREPRENEURIAL REFLECTION</span>
+              <span class="text-gray-400">31 December 2025</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary group-hover:text-executive-gold transition-colors leading-snug">
+              Unfinished Yet Unbroken
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Entrepreneurial reflections by Yatin Sanjeev Kanekar on returning, rebuilding, and redefining success from Sanquelim, Goa.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-border-hairline/60 mt-6 flex items-center justify-between">
+            <span class="font-mono text-[11px] text-gray-400">Read Time: ~5 mins</span>
+            <a href="article-unfinished-yet-unbroken.html" class="inline-flex items-center gap-1 text-xs font-mono font-bold text-executive-gold hover:underline">
+              <span>Read Article</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article Card: Not Just Smart — Autonomous: The Agentic AI Revolution in the Enterprise World -->
+        <article class="bg-white border border-border-hairline rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-lg border border-border-hairline aspect-video bg-surface-low flex items-center justify-center">
+              <img src="assets/images/global-banner-clean.png" alt="Not Just Smart — Autonomous: The Agentic AI Revolution in the Enterprise World" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-executive-gold font-bold uppercase tracking-wider">ARTIFICIAL INTELLIGENCE & SYSTEMS</span>
+              <span class="text-gray-400">20 December 2024</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary group-hover:text-executive-gold transition-colors leading-snug">
+              Not Just Smart — Autonomous: The Agentic AI Revolution in the Enterprise World
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Deep dive by Yatin Sanjeev Kanekar into how autonomous AI agents are reshaping software testing, test automation pipelines, and quality assurance loops.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-border-hairline/60 mt-6 flex items-center justify-between">
+            <span class="font-mono text-[11px] text-gray-400">Read Time: ~5 mins</span>
+            <a href="article-agentic-ai-revolution.html" class="inline-flex items-center gap-1 text-xs font-mono font-bold text-executive-gold hover:underline">
+              <span>Read Article</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Article Card: From Panini to AI: How India’s Ancient Wisdom Shapes Modern Technology -->
+        <article class="bg-white border border-border-hairline rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all duration-200 group">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-lg border border-border-hairline aspect-video bg-surface-low flex items-center justify-center">
+              <img src="assets/images/hero-skyline.png" alt="From Panini to AI: How India’s Ancient Wisdom Shapes Modern Technology" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-executive-gold font-bold uppercase tracking-wider">CULTURAL & TECHNICAL RESEARCH</span>
+              <span class="text-gray-400">13 November 2024</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-primary group-hover:text-executive-gold transition-colors leading-snug">
+              From Panini to AI: How India’s Ancient Wisdom Shapes Modern Technology
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Exploration by Yatin Sanjeev Kanekar linking ancient Sanskrit formal grammar to modern natural language processing and compiler design.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-border-hairline/60 mt-6 flex items-center justify-between">
+            <span class="font-mono text-[11px] text-gray-400">Read Time: ~5 mins</span>
+            <a href="article-from-panini-to-ai.html" class="inline-flex items-center gap-1 text-xs font-mono font-bold text-executive-gold hover:underline">
+              <span>Read Article</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
   </main>
 
-                      <!-- Reusable Executive Dark Footer Component (Reference Inspired) -->
+  <script src="assets/js/mobile-nav.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Reusable Executive Dark Footer (Reference Compliant) -->
   <footer class="bg-primary text-white py-16 px-6 border-t border-border-hairline shadow-2xl">
     <div class="max-w-[1280px] mx-auto space-y-12">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
@@ -482,19 +577,19 @@
           </a>
           <h3 class="font-display text-xl text-white font-semibold">Yatin Sanjeev Kanekar</h3>
           <p class="font-mono text-xs text-executive-gold uppercase tracking-wider font-semibold">
-            CEO · Technology Leader · Software Architect
+            ENTREPRENEUR · TECHNOLOGY LEADER · INNOVATOR
           </p>
           <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
-            Founder of Infipre IT Services OPC Pvt Ltd. Over 14 years of executive leadership in custom software engineering, ISTQB QA automation, enterprise platforms, and venture building.
+            Building technology-led businesses and practical solutions while creating meaningful impact through entrepreneurship, innovation, and leadership.
           </p>
           <div class="pt-3 space-y-2.5 text-xs font-mono">
-            <a href="mailto:yatin@infipre.com" class="flex items-center gap-3 text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">
+            <a href="mailto:connect@yatinsanjeevkanekar.in" class="flex items-center gap-3 text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">
               <span class="material-symbols-outlined text-executive-gold text-[18px]">mail</span>
-              <span>yatin@infipre.com</span>
+              <span>connect@yatinsanjeevkanekar.in</span>
             </a>
-            <a href="https://wa.me/919765400949" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">
+            <a href="https://wa.me/919890707000" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">
               <span class="material-symbols-outlined text-executive-gold text-[18px]">call</span>
-              <span>+91 97654 00949 (WhatsApp)</span>
+              <span>+91 98907 07000 (WhatsApp)</span>
             </a>
             <div class="flex items-center gap-3 text-gray-400">
               <span class="material-symbols-outlined text-executive-gold text-[18px]">location_on</span>
@@ -505,32 +600,32 @@
 
         <div class="md:col-span-5 grid grid-cols-3 gap-4 text-xs font-mono">
           <div>
-            <h4 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">About Yatin</h4>
+            <h4 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">ABOUT YATIN</h4>
             <ul class="space-y-2">
               <li><a href="index.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Home</a></li>
               <li><a href="about.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">About Yatin</a></li>
-              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Journey & Milestones</a></li>
+              <li><a href="journey.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">My Journey</a></li>
               <li><a href="awards.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Awards & Recognition</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Ventures & Tech</h4>
+            <h4 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">VENTURES & TECH</h4>
             <ul class="space-y-2">
               <li><a href="ventures.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Ventures</a></li>
-              <li><a href="venture-details.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Venture Details</a></li>
+              <li><a href="products-solutions.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Products & Solutions</a></li>
               <li><a href="technology.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Technology & Innovation</a></li>
               <li><a href="speaking.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Speaking & Engagement</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">Impact & Connect</h4>
+            <h4 class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-3">IMPACT & CONNECT</h4>
             <ul class="space-y-2">
-              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Insights</a></li>
-              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact</a></li>
+              <li><a href="insights.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Articles & Insights</a></li>
+              <li><a href="social-impact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Social Impact & Education</a></li>
               <li><a href="media-gallery.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Media & Gallery</a></li>
               <li><a href="work-with-me.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Work With Me</a></li>
               <li><a href="contact.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Contact</a></li>
-              <li><a href="privacy-terms.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Privacy & Terms</a></li>
+              <li><a href="privacy-terms.html" class="text-gray-300 hover:text-executive-gold transition-colors text-decoration-none">Privacy Policy & Terms</a></li>
             </ul>
           </div>
         </div>
@@ -540,30 +635,27 @@
             <img src="assets/images/yatin-portrait.jpg" alt="Yatin Sanjeev Kanekar" class="w-16 h-16 rounded-lg object-cover border border-executive-gold/40 flex-shrink-0 shadow-md">
             <div class="space-y-1">
               <h4 class="font-bold text-xs text-white">Yatin Sanjeev Kanekar</h4>
-              <p class="text-[10px] text-executive-gold font-mono uppercase">MBA (MIT Pune) · ISTQB</p>
+              <p class="text-[10px] text-executive-gold font-mono uppercase">ENTREPRENEUR · LEADER</p>
               <span class="inline-flex items-center gap-1.5 text-[10px] text-emerald-400 font-mono">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Available for Advisory
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Available for Collaboration
               </span>
             </div>
           </div>
           <p class="font-editorial-md text-xs italic text-gray-400 leading-relaxed border-l-2 border-executive-gold/50 pl-3">
-            “Clarity of purpose is the foundation of institutional longevity.”
+            “Technology should simplify, automate and empower.”
           </p>
         </div>
       </div>
 
       <div class="pt-8 border-t border-gray-800 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
-        <p>© 2026 Yatin Sanjeev Kanekar. All Rights Reserved. Infipre IT Services OPC Pvt Ltd.</p>
+        <p>© 2026 Yatin Sanjeev Kanekar. All Rights Reserved. www.yatinsanjeevkanekar.in</p>
         <div class="flex items-center gap-4">
           <a href="privacy-terms.html" class="hover:text-executive-gold transition-colors text-decoration-none">Privacy Policy & Terms</a>
           <span>·</span>
-          <span>Institutional Security Enabled</span>
+          <span>Sanquelim, Goa, India</span>
         </div>
       </div>
     </div>
   </footer>
-
-  <script src="assets/js/mobile-nav.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
